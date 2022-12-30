@@ -86,29 +86,26 @@ if (isset($_SESSION['guest'])) {
             <?php
             if (isset($_SESSION['guest'])) {
                 echo '
-                     <div class="avatar" style="padding-top:10px">
-                         <nav class="header__navbar hide-on-mobile-tablet" style="float: right;">
-                                         <ul class="header__nav-list">
-                                             <li class="header__nav-item header__nav-item--bold header__nav-item">
-                            <img src="/e_commerce/' . $data->profile_photo . '" style="width: 35px; height:35px; border-radius:50%" alt="Error">
-                                             </li>
+                  <nav class="header__navbar hide-on-mobile-tablet" style="float:right">
+                         <div class="avatar" style="padding-top:10px;">
+                             <li class="header__nav-item header__nav-user">
+                             <img src="/e_commerce/' . $data->profile_photo . '" class="header__nav-user-avt">
+                                <a href="#" class="header__nav-item-link header__nav-item--bold">' . $_SESSION['guest'] . '</a>
+                                <ul class="header__nav-user-menu">
+                                    <li class="header__nav-user-item">
+                                        <a href="#">Tài khoản của tôi</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="#">Đơn mua</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="index.php?page=main&controller=login&action=logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </li>
+                         </div>
+                     </nav>
 
-                                             <li class="header__nav-item header__nav-item--bold header__nav-item">
-                            <a href="index.php?page=main&controller=profile&action=index" class="header__nav-item-link">' . $_SESSION['guest'] . '</a>
-                                             </li>
-                                         </ul>
-                                         <span class="dropdown" style="width: 1px;">
-                                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background: none; border:none">
-                            </button>
-                                             <ul class="dropdown-menu">
-                            <li><a href="index.php?page=main&controller=login&action=logout">Logout</a></li>
-                            <li><a href="#">CSS</a></li>
-                            <li><a href="#">JavaScript</a></li>
-                                             </ul>
-                                         </span>
-
-                                     </nav>
-                     </div>
                 ';
             } else {
                 echo '

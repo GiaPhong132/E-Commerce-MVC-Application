@@ -13,7 +13,7 @@ class LoginController extends BaseController
     {
         session_start();
         if (isset($_SESSION["guest"])) {
-            header('Location: index.php?page=main&controller=layouts&action=index');
+            header('Location: index.php?page=main&controller=product&action=index');
         } else if (isset($_POST['submit-btn'])) {
             $username = $_POST['email'];
             $password = $_POST['password'];
@@ -27,7 +27,7 @@ class LoginController extends BaseController
                 else
                     $_SESSION["guest"] = $username;
 
-                header('Location: index.php?page=main&controller=layouts&action=index');
+                header('Location: index.php?page=main&controller=product&action=index');
             } else {
                 $err = "Sai tài khoản hoặc mật khẩu";
                 $data = array('err' => $err);
