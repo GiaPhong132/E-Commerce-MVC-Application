@@ -90,7 +90,7 @@ if (isset($_SESSION['guest'])) {
                          <nav class="header__navbar hide-on-mobile-tablet" style="float: right;">
                                          <ul class="header__nav-list">
                                              <li class="header__nav-item header__nav-item--bold header__nav-item">
-                            <img src="/e_commerce/' . $data->profile_photo . '" style="width: 35px; height:35px;" alt="Error">
+                            <img src="/e_commerce/' . $data->profile_photo . '" style="width: 35px; height:35px; border-radius:50%" alt="Error">
                                              </li>
 
                                              <li class="header__nav-item header__nav-item--bold header__nav-item">

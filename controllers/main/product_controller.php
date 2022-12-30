@@ -33,7 +33,7 @@ class ProductController  extends BaseController
         // $getQuery = "SELECT * FROM product LIMIT $initial_page, $limit";
         // $result = mysqli_query($conn, $getQuery);
 
-        $getQuery = "SELECT * FROM product  ";
+        $getQuery = "SELECT * FROM product limit 20";
         $result = mysqli_query($conn, $getQuery);
 
         // $getQuery = "SELECT COUNT(*) FROM product";

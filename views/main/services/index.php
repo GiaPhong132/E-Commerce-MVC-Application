@@ -93,7 +93,7 @@ require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
                                     echo '
                                         <div class="col l-2-4 m-3 c-6 home-product-item">
                                              <a class="home-product-item-link" href="#">
-                                        <div class="home-product-item__img" style="background-image: url(./assets/img/home/1.PNG);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif);"></div>
                                         <div class="home-product-item__info">
                                             <h4 class="home-product-item__name">' . $row['name'] . '</h4>
                                             <div class="home-product-item__price">
