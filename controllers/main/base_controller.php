@@ -11,7 +11,7 @@ class BaseController
             ob_start();
             require_once($view_file);
             $content = ob_get_clean();
-            require_once('/xampp/htdocs/e_commerce/views/admin/basic_layouts.php');
+            require_once('/xampp/htdocs/E_commerce/views/admin/basic_layouts.php');
         } else {
             header('Location: index.php?page=main&controller=layouts&action=error');
         }

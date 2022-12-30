@@ -11,31 +11,31 @@
                 </div>
                 <div class="client-slider owl-carousel owl-theme">
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/google.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/google.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/tencent-logo.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/tencent-logo.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/meta-inc.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/meta-inc.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/master_card.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/master_card.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/kms.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/kms.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/vietinbank-logo.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/vietinbank-logo.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/vtv.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/vtv.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/intel.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/intel.png" alt="logo">
                     </div>
                     <div class="item">
-                        <img src="/e_commerce/public/images/clients/twitter.png" alt="logo">
+                        <img src="/E_commerce/public/images/clients/twitter.png" alt="logo">
                     </div>
                 </div>
             </div>

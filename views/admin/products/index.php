@@ -6,8 +6,8 @@ if (!isset($_SESSION["user"])) {
 ?>
 
 <?php
-require_once('/xampp/htdocs/e_commerce/views/admin/header.php');
-// require_once("/XAMPP/htdocs/e_commerce/models/product.php");
+require_once('/xampp/htdocs/E_commerce/views/admin/header.php');
+// require_once("/XAMPP/htdocs/E_commerce/models/product.php");
 // $data = Product::getAll();
 ?>
 
@@ -15,7 +15,7 @@ require_once('/xampp/htdocs/e_commerce/views/admin/header.php');
 
 
 <?php
-require_once('/xampp/htdocs/e_commerce/views/admin/content_layouts.php'); ?>
+require_once('/xampp/htdocs/E_commerce/views/admin/content_layouts.php'); ?>
 <div id="content-wrapper" class="d-flex flex-column">
     <!-- Add Content -->
     <!-- Content Header (Page header)-->
@@ -217,8 +217,8 @@ require_once('/xampp/htdocs/e_commerce/views/admin/content_layouts.php'); ?>
 
 
 <!-- Add Javascripts -->
-<script src="/e_commerce/public/js/admin/index.js"></script>
-<script type="text/javascript" src="/e_commerce/public/js/admin.js"></script>
+<script src="/E_commerce/public/js/admin/index.js"></script>
+<script type="text/javascript" src="/E_commerce/public/js/admin.js"></script>
 <script>
     function go2Page() {
         var page = document.getElementById("page").value;

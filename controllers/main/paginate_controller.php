@@ -1,6 +1,6 @@
 <?php
-require_once('/xampp/htdocs/e_commerce/controllers/main/base_controller.php');
-// require_once('/xampp/htdocs/e_commerce/models/paginate.php');
+require_once('/xampp/htdocs/E_commerce/controllers/main/base_controller.php');
+// require_once('/xampp/htdocs/E_commerce/models/paginate.php');
 
 class PaginateController extends BaseController
 {
@@ -17,7 +17,7 @@ class PaginateController extends BaseController
         if (!$conn) {
             die("Connection failed" . mysqli_connect_error());
         } else {
-            mysqli_select_db($conn, 'e_commerce');
+            mysqli_select_db($conn, 'E_commerce');
         }
 
         $limit = 5;

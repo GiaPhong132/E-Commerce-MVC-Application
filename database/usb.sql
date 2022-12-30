@@ -1,4 +1,4 @@
-
+use E_commerce;
 
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('USB OTG 3.1 512GB Type C Sandisk SDDDC3 Xanh',688000,701000,0,'Svalbard & Jan Mayen Islands',26);
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('USB OTG 3.1 128GB Dual Lighting Type C Sandisk SDIX70N Đen',854000,384000,9,'Algeria',22);

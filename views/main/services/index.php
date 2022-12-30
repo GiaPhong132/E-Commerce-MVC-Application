@@ -1,5 +1,5 @@
 <?php
-require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
+require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
 ?>
 
 <!DOCTYPE html>
@@ -812,7 +812,7 @@ require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
                                 </div>
                                 <div class="col l-2-4 m-3 c-6 home-product-item">
                                     <a class="home-product-item-link" href="#">
-                                        <div class="home-product-item__img" style="background-image: url(/e_commerce/public/assets/img/home/21.PNG);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(/E_commerce/public/assets/img/home/21.PNG);"></div>
                                         <div class="home-product-item__info">
                                             <h4 class="home-product-item__name">Loa máy tính để bàn,loa vi tính MC D - 221 SUPER BASS</h4>
                                             <div class="home-product-item__price">

@@ -1,3 +1,6 @@
+use E_commerce;
+
+
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('Chuột Không dây Silent A4Tech G3-280NS',996000,388000,17,'Bhutan',6);
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('Chuột Không dây Bluetooth Silent Rapoo M650 Hà Lan',470000,206000,2,'Tokelau',13);
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('Chuột Không dây Bluetooth Silent Rapoo M650 Pháp',842000,928000,8,'Saint Lucia',73);

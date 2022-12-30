@@ -1,3 +1,4 @@
+use E_commerce;
 
 
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('Loa Bluetooth Marshall Emberton   Yêu thích',763000,958000,16,'Armenia',91);

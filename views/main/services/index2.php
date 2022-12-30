@@ -1,5 +1,5 @@
 <?php
-require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
+require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
             <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 
                 <div class="bg-img bg-img-1">
-                    <img src="/e_commerce/public/images/banner.jpg">
+                    <img src="/E_commerce/public/images/banner.jpg">
                 </div>
 
                 <div class="slide-caption">
@@ -52,7 +52,7 @@ require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
         <div class='card card-body'>
             <div class='media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row'>
             <div class='mr-2 mb-3 mb-lg-0'>
-                <img src='/e_commerce/"  . $row['img'] . "'width='150' height='150'>
+                <img src='/E_commerce/"  . $row['img'] . "'width='150' height='150'>
             </div>
             <div class='media-body'>
                     <h6 class='media-title font-weight-semibold'>
@@ -142,4 +142,4 @@ require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
 
 
 
-<?php include_once("/xampp/htdocs/e_commerce/views/main/footer.php"); ?>
+<?php include_once("/xampp/htdocs/E_commerce/views/main/footer.php"); ?>

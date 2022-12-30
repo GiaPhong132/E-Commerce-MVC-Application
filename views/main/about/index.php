@@ -38,15 +38,15 @@
                 <div class="about-slider owl-carousel owl-theme">
                     <!-- Story Image -->
                     <div class="item">
-                        <img src="/e_commerce/public/images/tamnhin.png" alt="slider-image">
+                        <img src="/E_commerce/public/images/tamnhin.png" alt="slider-image">
                     </div>
                     <!-- Story Image -->
                     <div class="item">
-                        <img src="/e_commerce/public/images/tamnhin2.png" alt="slider-image">
+                        <img src="/E_commerce/public/images/tamnhin2.png" alt="slider-image">
                     </div>
                     <!-- Story Image -->
                     <div class="item">
-                        <img src="/e_commerce/public/images/giai_phap_anm.webp" alt="slider-image">
+                        <img src="/E_commerce/public/images/giai_phap_anm.webp" alt="slider-image">
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="/e_commerce/public/images/hcmut.png">
+                        <img src="/E_commerce/public/images/hcmut.png">
                     </div>
                     <h3 class="title">Thi</h3>
                     <span class="post">Front-end</span>
@@ -100,7 +100,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="/e_commerce/public/images/hcmut.png">
+                        <img src="/E_commerce/public/images/hcmut.png">
                     </div>
                     <h3 class="title">Khánh</h3>
                     <span class="post">Front-end </span>
@@ -114,7 +114,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="/e_commerce/public/images/hcmut.png">
+                        <img src="/E_commerce/public/images/hcmut.png">
                     </div>
                     <h3 class="title">Đạt</h3>
                     <span class="post">Front-end</span>
@@ -128,7 +128,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="/e_commerce/public/images/hcmut.png">
+                        <img src="/E_commerce/public/images/hcmut.png">
                     </div>
                     <h3 class="title">Phong</h3>
                     <span class="post">Back-end </span>
@@ -142,7 +142,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="/e_commerce/public/images/hcmut.png">
+                        <img src="/E_commerce/public/images/hcmut.png">
                     </div>
                     <h3 class="title">Nhân</h3>
                     <span class="post">Back-end </span>
@@ -229,7 +229,7 @@
                 <div class="block text-center">
                     <!-- Investor Image -->
                     <div class="image shadow hover-zoom">
-                        <a href="index.php?page=main&controller=services&action=index"> <img src="/e_commerce/public/images/visual.png" alt="investor">
+                        <a href="index.php?page=main&controller=services&action=index"> <img src="/E_commerce/public/images/visual.png" alt="investor">
                         </a>
                     </div>
                     <!-- Company -->
@@ -242,7 +242,7 @@
                 <div class="block text-center">
                     <!-- Investor Image -->
                     <div class="image shadow hover-zoom">
-                        <a href="index.php?page=main&controller=services&action=index"> <img src="/e_commerce/public/images/dietvirus.jfif" alt="investor"></a>
+                        <a href="index.php?page=main&controller=services&action=index"> <img src="/E_commerce/public/images/dietvirus.jfif" alt="investor"></a>
 
                     </div>
                     <!-- Company -->
@@ -255,7 +255,7 @@
                 <div class="block text-center">
                     <!-- Investor Image -->
                     <div class="image shadow hover-zoom">
-                        <a href="index.php?page=main&controller=services&action=index"><img src="/e_commerce/public/images/cloud.jfif" alt="investor"></a>
+                        <a href="index.php?page=main&controller=services&action=index"><img src="/E_commerce/public/images/cloud.jfif" alt="investor"></a>
                     </div>
                     <!-- Company -->
                     <h3>Lưu trữ đám mây</h3>
@@ -290,4 +290,4 @@
 
 <!--====  End of Section comment  ====-->
 
-<?php require_once("/xampp/htdocs/e_commerce/views/main/footer.php"); ?>
+<?php require_once("/xampp/htdocs/E_commerce/views/main/footer.php"); ?>

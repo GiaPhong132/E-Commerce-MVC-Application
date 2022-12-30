@@ -20,7 +20,7 @@
             <div class="col-lg-6 mr-auto justify-content-center">
                 <!-- Feature mockup -->
                 <div class="image-content" data-aos="fade-left">
-                    <img class="img-fluid" src="/e_commerce/public/images/jupyter.png" alt="ipad">
+                    <img class="img-fluid" src="/E_commerce/public/images/jupyter.png" alt="ipad">
                 </div>
             </div>
         </div>

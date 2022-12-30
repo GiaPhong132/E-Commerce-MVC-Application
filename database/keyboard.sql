@@ -1,4 +1,4 @@
-use e_commerce;
+use E_commerce;
 
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('Bàn Phím Cơ Có Dây Gaming Corsair K63 Compact Mechanical Đen',941000,351000,17,'Italy',93);
 INSERT INTO product(name,oldPrice,newPrice,sold,origin,saleOff) VALUES ('Bàn phím Magic Keyboard Apple MK2A3 Trắng',955000,703000,16,'Burundi',98);

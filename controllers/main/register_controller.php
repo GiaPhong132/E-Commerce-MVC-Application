@@ -1,6 +1,6 @@
 <?php
-require_once('/xampp/htdocs/e_commerce/controllers/main/base_controller.php');
-require_once('/xampp/htdocs/e_commerce/models/user.php');
+require_once('/xampp/htdocs/E_commerce/controllers/main/base_controller.php');
+require_once('/xampp/htdocs/E_commerce/models/user.php');
 
 class RegisterController extends BaseController
 {

@@ -5,13 +5,13 @@ if (isset($_SESSION["user"])) {
 }
 ?>
 <?php
-require_once('/xampp/htdocs/e_commerce/views/admin/header.php'); ?>
+require_once('/xampp/htdocs/E_commerce/views/admin/header.php'); ?>
 
 <!-- Add CSS -->
 
 
 <?php
-require_once('/xampp/htdocs/e_commerce/views/admin/content_layouts.php'); ?>
+require_once('/xampp/htdocs/E_commerce/views/admin/content_layouts.php'); ?>
 
 
 <!-- Code -->
@@ -303,10 +303,10 @@ require_once('/xampp/htdocs/e_commerce/views/admin/content_layouts.php'); ?>
 
 
 <?php
-require_once('/xampp/htdocs/e_commerce/views/admin/footer.php'); ?>
+require_once('/xampp/htdocs/E_commerce/views/admin/footer.php'); ?>
 
 <!-- Add Javascripts -->
-<script src="/e_commerce/public/js/user/index.js"></script>
+<script src="/E_commerce/public/js/user/index.js"></script>
 </body>
 
 </html>

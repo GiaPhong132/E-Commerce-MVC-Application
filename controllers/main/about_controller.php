@@ -1,5 +1,5 @@
 <?php
-require_once('/xampp/htdocs/e_commerce/controllers/main/base_controller.php');
+require_once('/xampp/htdocs/E_commerce/controllers/main/base_controller.php');
 
 class AboutController extends BaseController
 {

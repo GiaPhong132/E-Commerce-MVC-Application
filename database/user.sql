@@ -1,4 +1,4 @@
-use e_commerce;
+use E_commerce;
 
 drop table if exists user;
 

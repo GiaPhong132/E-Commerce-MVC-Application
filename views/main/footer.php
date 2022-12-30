@@ -1,105 +1,165 @@
-<footer id="footer">
-
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 footer-contact">
-                    <h3>Trụ sở chính</h3>
-                    <p>
-                        Số 8 đường số 4 <br>
-                        Phường 2, Quận 1<br>
-                        TP. Hồ Chí Minh, Việt Nam <br><br>
-                        <strong>Điện thoại:</strong> 012 345 6789<br>
-                        <strong>Email:</strong> IDEdevelopment@BKSHOPE.com.vn<br>
-                    </p>
-                </div>
-
-                <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>JOIN US</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-chevrons-right"></i> <a href="">Facebook</a></li>
-                        <li><i class="fa-solid fa-chevrons-right"></i> <a href="">Youtube</a></li>
+<footer class="footer">
+    <!-- main footer -->
+    <div class="main-footer">
+        <div class="grid wide">
+            <div class="row sm-gutter main-footer-info">
+                <div class="col l-2-4 m-4 ">
+                    <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
+                    <ul class="footer-list">
+                        <li>
+                            <a href="#" class="footer-item-link">Trung Tâm Trợ Giúp</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Hướng Dẫn Mua Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Hướng Dẫn Bán Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Thanh Toán</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Vận Chuyển</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Trả Hàng & Hoàn Tiền</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Chăm Sóc Khách Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Chính Sách Bảo Mật</a>
+                        </li>
                     </ul>
                 </div>
-
-                <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>CONTACT US</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-chevrons-right"></i> <a href="index.php?page=main&controller=register&action=index">123456789</a></li>
-                        <li><i class="fa-solid fa-chevrons-right"></i> <a href="">987654321</a></li>
+                <div class="col l-2-4 m-4 ">
+                    <h3 class="footer__heading">VỀ SHOPEE</h3>
+                    <ul class="footer-list">
+                        <li>
+                            <a href="#" class="footer-item-link">Giới Thiệu Về Shepo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Tuyển Dụng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Điều Khoản Shepo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Chính Sách Bảo Mật</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Kênh Người Bán</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link">Liên Hệ Với Truyền Thông</a>
+                        </li>
                     </ul>
                 </div>
-
-                <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>Đăng ký nhận tin tức mới nhất</h4>
-                    <p>Những thông tin và tin tức mới nhất về BKSHOPE sẽ được gửi đến bạn qua email bạn điền dưới đây</p>
-                    <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Đăng ký">
-                    </form>
+                <div class="col l-2-4 m-4  pay-and-ship">
+                    <div>
+                        <h3 class="footer__heading">THANH TOÁN</h3>
+                        <div class="footer-sale-ship">
+                            <img src="/e_commerce/public/assets/img/pay/1.PNG" class="footer-item-sale-ship">
+                            <img src="/e_commerce/public/assets/img/pay/2.PNG" class="footer-item-sale-ship">
+                            <img src="/e_commerce/public/assets/img/pay/3.PNG" class="footer-item-sale-ship">
+                            <img src="/e_commerce/public/assets/img/pay/4.PNG" class="footer-item-sale-ship">
+                        </div>
+                    </div>
                 </div>
-
+                <div class="col l-2-4 m-4 ">
+                    <h3 class="footer__heading">THEO DÕI CHÚNG TÔI</h3>
+                    <ul class="footer-list">
+                        <li>
+                            <a href="#" class="footer-item-link footer-item-link-fb">
+                                <i class="footer-item-icon fa-brands fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link footer-item-link-is">
+                                <i class="footer-item-icon fab fa-instagram-square"></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-item-link footer-item-link-li">
+                                <i class="footer-item-icon fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2-4 m-8 ">
+                    <h3 class="footer__heading">TẢI ỨNG DỤNG SHEPO</h3>
+                    <div class="footer-download">
+                        <a href="#" class="footer-download-link">
+                            <img src="/e_commerce/public/assets/img/qr/qr-code.png" class="footer-download-qr">
+                        </a>
+                        <div class="footer-download-app">
+                            <a href="#" class="footer-download-link">
+                                <img src="/e_commerce/public/assets/img/qr/gg-play.png" class="footer-download-app-img">
+                            </a>
+                            <a href="#" class="footer-download-link">
+                                <img src="/e_commerce/public/assets/img/qr/app-store.png" class="footer-download-app-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="container d-md-flex py-4">
-
-        <div class="me-md-auto text-center text-md-start">
-            <div class="copyright">
-                &copy; Copyright <strong><span>BKSHOPE</span></strong>. All Rights Reserved
+</footer>
+</div>
+<!-- modal -->
+<div class="modal">
+    <div class="modal__body">
+        <!-- authen signin-->
+        <div class="auth-form">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Đăng Ký</h3>
+                    <div class="auth-form__switch-btn">Đăng nhập</div>
+                </div>
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="text" placeholder="Số điện thoại" class="auth-form__input">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" placeholder="Mật khẩu" class="auth-form__input">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" placeholder="Nhập lại mật khẩu" class="auth-form__input">
+                    </div>
+                </div>
+                <div class="auth-form__policy">
+                    <p class="auth-form__policy-text">
+                        Bằng việc đăng ký, bạn đồng ý với Shoppee về
+                        <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                        <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
+                    </p>
+                </div>
+                <div class="auth-form__control">
+                    <button class="btn auth-form__back">TRỞ LẠI</button>
+                    <button class="btn btn--primary">ĐĂNG KÝ</button>
+                </div>k
             </div>
-            <div class="credits">
-                Designed by <a href="index.php?page=admin&controller=layouts&action=index">BKSHOPE</a>
+            <div class="auth-form__signin">
+                <a href="#" class="btn btn-signin auth-form__signin-fb">
+                    <i class="auth-form__signin-icon fab fa-facebook-square"></i>
+                    <p class="auth-form__signin-text">
+                        Kết nối với Facebook
+                    </p>
+                </a>
+                <a href="#" class="btn btn-signin auth-form__signin-gg">
+                    <i class="auth-form__signin-icon fab fa-google"></i>
+                    <p class="auth-form__signin-text">
+                        Kết nối với Google
+                    </p>
+                </a>
             </div>
-            <!-- Back to top button -->
-            <!-- <a href="#" class="btn back-to-top"></a> -->
-            <script>
-                window.onscroll = function() {
-                    scrollFunction()
-                };
+        </div>
+    </div>
+</div>
 
-                function scrollFunction() {
-                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                        document.getElementById("src-top").style.display = "block";
-                    } else {
-                        document.getElementById("src-top").style.display = "none";
-                    }
-                }
-
-                // When the user clicks on the button, scroll to the top of the document
-                function topFunction() {
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, '400');
-                }
-            </script>
-
-</footer><!-- End Footer -->
-<button onclick="topFunction()" id="src-top" title="Go to top"><i class="fa fa-chevron-up"></i></button>
-
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-
-
-<script type="text/javascript" src="/e_commerce/public/js/main.js"></script>
-<script type="text/javascript" src="/e_commerce/public/js/custom.js"></script>
-
-<!-- JAVASCRIPTS -->
-<script src="/e_commerce/public/plugins/jquery/jquery.js"></script>
-<script src="/e_commerce/public/plugins/popper/popper.min.js"></script>
-<script src="/e_commerce/public/plugins/bootstrap/bootstrap.min.js"></script>
-<script src="/e_commerce/public/plugins/owl-carousel/owl.carousel.min.js"></script>
-
-<script src="/e_commerce/public/plugins/syotimer/jquery.syotimer.min.js"></script>
-<script src="/e_commerce/public/plugins/aos/aos.js"></script>
-
-<script src="/e_commerce/public/js/custom.js"></script>
-
-
+<!-- script js -->
+<!-- <script src="./assets/js/product.js"></script> -->
 </body>
 
 </html>

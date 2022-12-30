@@ -42,7 +42,7 @@ if ($page == 'error') {
     $action = 'index';
 }
 
-require_once('/xampp/htdocs/e_commerce/controllers/' . $page . "/" . $controller . '_controller.php');
+require_once('/xampp/htdocs/E_commerce/controllers/' . $page . "/" . $controller . '_controller.php');
 
 $klass = str_replace('_', '', ucwords($controller, '_')) . 'Controller';
 $controller = new $klass;
