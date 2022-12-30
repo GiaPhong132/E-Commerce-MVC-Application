@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['guest'])) {
-    require_once('/xampp/htdocs/e_commerce/models/user.php');
+    require_once('/xampp/htdocs/E-commerce/models/user.php');
 
     $data = User::get($_SESSION['guest']);
 }
@@ -14,133 +14,286 @@ if (isset($_SESSION['guest'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shope - Bách Khoa - HCMUT</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/e_commerce/public/images/icons/favicon_01.png" />
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Bootstrap -->
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <!-- <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>    -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-
-    <!-- Nếu ko chạy đc drop down thì đặt hoặc bỏ comment cái này -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-
-
-    <!-- icon -->
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Bootstrap -->
-    <!-- <link href="/e_commerce/public/plugins/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- themify icon -->
-    <link rel="stylesheet" href="/e_commerce/public/plugins/themify-icons/themify-icons.css">
-    <!-- Owl Carousel -->
-    <link href="/e_commerce/public/plugins/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet" media="screen">
-    <!-- Owl Carousel Theme -->
-    <link href="/e_commerce/public/plugins/owl-carousel/assets/owl.theme.green.min.css" rel="stylesheet" media="screen">
-    <!-- Fancy Box -->
-    <link href="/e_commerce/public/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet">
-    <!-- AOS -->
-    <link rel="stylesheet" href="/e_commerce/public/plugins/aos/aos.css">
-
-    <!-- CSS -->
-    <link href="/e_commerce/public/css/layout/navbar.css" rel="stylesheet">
-    <link href="/e_commerce/public/css/layout/footer.css" rel="stylesheet">
-    <link href="/e_commerce/public/css/layout/hero.css" rel="stylesheet">
-    <link href="/e_commerce/public/css/layout/product.css" rel="stylesheet">
-    <link href="/e_commerce/public/css/layout/timeline.css" rel="stylesheet">
-    <link href="/e_commerce/public/css/layout/profile.css" rel="stylesheet">
-    <!-- <link href="/e_commerce/public/css/layout/stlye.css" rel="stylesheet"> -->
-    <!-- <link href="/e_commerce/public/css/layout/main.css" rel="stylesheet"> -->
-    <!-- <link href="/e_commerce/public/css/layout/about.css" rel="stylesheet">  -->
-
-
-
-
+    <title>Shepo</title>
+    <link rel="icon" href="../public/assets/img/logo/shopee-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/e_commerce/public/assets/css/base.css">
+    <link rel="stylesheet" href="/e_commerce/public/assets/css/style.css">
+    <link rel="stylesheet" href="/e_commerce/public/assets/css/grid.css">
+    <link rel="stylesheet" href="/e_commerce/public/assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl navbar-light bg-light">
-        <a href="index.php?page=main&controller=layouts&action=index" class="navbar-brand"><i class="fa fa-cube"></i>BK<b style="color:deepskyblue">SHOPE</b></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Collection of nav links, forms, and other content for toggling -->
-        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-            <div class="navbar-nav">
-                <a href="index.php?page=main&controller=layouts&action=index" class="nav-item nav-link active m-auto">Home</a>
-                <a href="index.php?page=main&controller=about&action=index" class="nav-item nav-link m-auto">About</a>
-                <a href="index.php?page=main&controller=paginate&action=index" class="nav-item nav-link m-auto">Product</a>
+    <header class="header">
+        <div class="grid wide">
+            <!-- navbar -->
+            <nav class="header__navbar hide-on-mobile-tablet">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Kênh Người Bán</li>
+                    <li class="header__nav-item header__nav-item--hover header__nav-item--separate">Trở thành Người bán Shepo</li>
+                    <!-- qr code -->
+                    <div class="header__qrcode">
+                        <img src="./assets/img/qr/qr-code.png" class="header__qr">
+                        <div class="header__apps">
+                            <a href="#" class="header__app-link">
+                                <img src="./assets/img/qr/app-store.png" class="header__app-img">
+                            </a>
+                            <a href="#" class="header__app-link">
+                                <img src="./assets/img/qr/gg-play.png" class="header__app-img">
+                            </a>
+                            <a href="#" class="header__app-link">
+                                <img src="./assets/img/qr/app-gallery.png" class="header__app-img">
+                            </a>
+                            <a href="#" class="header__app-link">
+                                <img src="./assets/img/qr/ltp-img.png" class="header__app-img">
+                            </a>
+                        </div>
+                    </div>
+                    <li class="header__nav-item">
+                        Kết nối
+                        <a href="#" class="header__nav-icon-link">
+                            <i class="header__nav-icon fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="header__nav-icon-link">
+                            <i class="header__nav-icon fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item header__show-note">
+                        <a href="#" class="header__nav-item-link">
+                            <i class="header__nav-icon far fa-bell"></i> Thông báo
+                        </a>
+                        <!-- thông báo -->
+                        <div class="header__notifi">
+                            <header class="header__notifi-header">
+                                <h3>Thông Báo Mới Nhận</h3>
+                            </header>
+                            <ul class="header__notifi-list">
+                                <li class="header__notifi-item">
+                                    <a href="#" class="header__notifi-link">
+                                        <img src="./assets/img/sp/casio.png" class="header__notifi-img">
+                                        <div class="header__notifi-info">
+                                            <div class="header__notifi-name">
+                                                Casio fx 580 VN Plus
+                                            </div>
+                                            <div class="header__notifi-desc">
+                                                Mua Casio 580 của LTP bao xịn, bao mượt, bao đẹp
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notifi-item">
+                                    <a href="#" class="header__notifi-link">
+                                        <img src="/e_commerce/public/assets/img/sp/iphone.png" class="header__notifi-img">
+                                        <div class="header__notifi-info">
+                                            <div class="header__notifi-name">
+                                                Điện Thoại iPhone 13 Pro 128GB - Hàng Nhập Khẩu
+                                            </div>
+                                            <div class="header__notifi-desc">
+                                                3 Camera: Ống kính góc rộng f/1.5 - Tele f/2.8 - Siêu rộng f/1.8
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notifi-item">
+                                    <a href="#" class="header__notifi-link">
+                                        <img src="./assets/img/sp/iphone2.png" class="header__notifi-img">
+                                        <div class="header__notifi-info">
+                                            <div class="header__notifi-name">
+                                                Apple iPhone 12 Pro Max 128GB
+                                            </div>
+                                            <div class="header__notifi-desc">
+                                                iPhone 12 Pro Max. Màn hình Super Retina XDR 6.7 inch
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notifi-item">
+                                    <a href="#" class="header__notifi-link">
+                                        <img src="./assets/img/sp/laptop.png" class="header__notifi-img">
+                                        <div class="header__notifi-info">
+                                            <div class="header__notifi-name">
+                                                Laptop HP 650 g1 siêu khỏe bền
+                                            </div>
+                                            <div class="header__notifi-desc">
+                                                Laptop siêu bền, HP 650 g1 siêu khỏe bền ssd 120gb 15,6inh FULL HD
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notifi-item">
+                                    <a href="#" class="header__notifi-link">
+                                        <img src="./assets/img/sp/laptop2.png" class="header__notifi-img">
+                                        <div class="header__notifi-info">
+                                            <div class="header__notifi-name">
+                                                Laptop thinkpad x240 chất mỏng nhẹ i5 4300u Ram 4gb Ssd 128gb
+                                            </div>
+                                            <div class="header__notifi-desc">
+                                                HP 650 g1 chip M đời 4, cpu i5 4200M ram 4gb -8gb
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <footer class="header__notifi-footer">
+                                <a href="#" class="header__notifi-footer-btn">Xem tất cả</a>
+                            </footer>
+                        </div>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-item-link">
+                            <i class="header__nav-icon far fa-question-circle"></i> Hỗ trợ
+                        </a>
+                    </li>
+
+                    <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
+                        <a href="index.php?page=main&controller=login&action=index" class="header__nav-item-link">Đăng nhập</a>
+                    </li>
+
+                    <li class="header__nav-item header__nav-item--bold header__nav-item--separate">
+                        <a href="index.php?page=main&controller=register&action=index" class="header__nav-item-link">Đăng ký</a>
+                    </li>
+
+                    <!-- <li class="header__nav-item header__nav-user">
+                            <img src="./assets/img/user.png" class="header__nav-user-avt">
+                            <a href="#" class="header__nav-item-link header__nav-item--bold">Lục Thiên Phong</a>
+                            <ul class="header__nav-user-menu">
+                                <li class="header__nav-user-item">
+                                    <a href="#">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header__nav-user-item">
+                                    <a href="#">Đơn mua</a>
+                                </li>
+                                <li class="header__nav-user-item">
+                                    <a href="#">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                </ul>
+            </nav>
+            <!-- search -->
+            <div class="header__contain">
+                <label for="mobile-search" class="header__mobile-search">
+                    <i class="header__mobile-search-icon fas fa-search"></i>
+                </label>
+                <div class="header__logo">
+                    <a href="./index.html" class="header__logo-link">
+                        <img src="./assets/img/logo/logo-full-white.png" class="header__logo-img">
+                    </a>
+                </div>
+                <input type="checkbox" id="mobile-search" class="header__search-check" hidden>
+                <div class="header__search">
+                    <div class="header__search-input-wrap">
+                        <input type="text" class="header__search-input" placeholder="Tìm kiếm trên Shepo">
+                        <div class="header__search-history">
+                            <ul class="header__search-history-list">
+                                <li class="header__search-history-item">
+                                    <a href="#">Áo thun nam</a>
+                                </li>
+                                <li class="header__search-history-item">
+                                    <a href="#">Bánh quy</a>
+                                </li>
+                                <li class="header__search-history-item">
+                                    <a href="#">Mỹ phẩm cho nam</a>
+                                </li>
+                                <li class="header__search-history-item">
+                                    <a href="#">Iphone 13 Pro Max giá rẻ</a>
+                                </li>
+                                <li class="header__search-history-item">
+                                    <a href="#">Khô gà</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn header__search-btn">
+                        <i class="header__search-btn-icon fas fa-search"></i>
+                    </button>
+                </div>
+                <!-- header__cart--no-cart -->
+                <!-- header__cart--has-cart -->
+                <div class="header__cart header__cart--has-cart">
+                    <i class="header__cart-icon fas fa-shopping-cart"></i>
+                    <div class="header__cart-count">3</div>
+
+                    <div class="header__cart-list no-cart">
+                        <img src="./assets/img/sp/no-cart.png" class="header__no-cart-img">
+                        <p class="header__no-cart-text">Chưa có sản phẩm</p>
+                    </div>
+
+                    <div class="header__cart-list has-cart">
+                        <h4 class="header__cart-heading">Sản phẩm đã chọn</h4>
+                        <ul class="header__cart-list-item">
+                            <li class="header__cart-item">
+                                <img src="./assets/img/buy/1.PNG" class="header__cart-item-img">
+                                <div class="header__cart-item-info">
+                                    <div class="header__cart-item-heading">
+                                        <h3 class="header__cart-item-name">Logitech G Pro Wireless Superlight</h3>
+                                        <p class="header__cart-item-price">2.000.000đ</p>
+                                    </div>
+                                    <div class="header__cart-item-body">
+                                        <p class="header__cart-item-number">x 2</p>
+                                        <div class="header__cart-item-close">
+                                            Xoá
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__cart-item">
+                                <img src="./assets/img/buy/2.PNG" class="header__cart-item-img">
+                                <div class="header__cart-item-info">
+                                    <div class="header__cart-item-heading">
+                                        <h3 class="header__cart-item-name">Iphone 11 64GB</h3>
+                                        <p class="header__cart-item-price">12.500.000đ</p>
+                                    </div>
+                                    <div class="header__cart-item-body">
+                                        <p class="header__cart-item-number">x 1</p>
+                                        <div class="header__cart-item-close">
+                                            Xoá
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__cart-item">
+                                <img src="./assets/img/buy/3.PNG" class="header__cart-item-img">
+                                <div class="header__cart-item-info">
+                                    <div class="header__cart-item-heading">
+                                        <h3 class="header__cart-item-name">Iphone 11 Pro Max 256GB</h3>
+                                        <p class="header__cart-item-price">15.800.000đ</p>
+                                    </div>
+                                    <div class="header__cart-item-body">
+                                        <p class="header__cart-item-number">x 1</p>
+                                        <div class="header__cart-item-close">
+                                            Xoá
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="header__cart-footer">
+                            <a href="#" class="btn btn--primary header__cart-see-cart">Xem giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-nav ml-auto">
-                <?php
-                if (!isset($_SESSION['guest']) && !isset($_SESSION['user']))
-                    echo '
-                    <a href="index.php?page=main&controller=login&action=index" class="nav-item nav-link m-auto">Sign In</a>
-                    <a href="index.php?page=main&controller=register&action=index" class="nav-item nav-link m-auto">Sign Up</a>
-                    '
-                ?>
-
-                <?php
-                if (isset($_SESSION['guest'])) {
-                    echo
-                    '
-                    <div class="nav-item dropdown m-auto"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">';
-
-                    // <img src="$data->profile_photo" class="avatar" alt="Avatar">
-                    echo "<img src='$data->profile_photo' >";
-
-
-                    echo '
-                     ' . $data->lname . '<b class="caret"></b></a>
-                    <div class="dropdown-menu m-auto"><a href="index.php?page=main&controller=profile&acion=index" class="dropdown-item"><i class="fa-solid fa-user"></i> Profile</a></a></a>
-                        ';
-                } else if (isset($_SESSION['user'])) {
-                    echo  '
-                    <div class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/e_commerce/public/images/HCMUT-BachKhoa-Logo.png" class="avatar" alt="Avatar"> Admin<b class="caret"></b></a><div class="dropdown-menu"></a></a>
-                        ';
-                }
-                ?>
-
-                <?php
-                if (isset($_SESSION['user']))
-                    echo '
-                                <a href="index.php?page=admin&controller=paginateuser&action=index" class="dropdown-item"><i class="fa fa-sliders"></i> Admin</a>
-                                ';
-                ?>
-
-                <?php
-                if (isset($_SESSION['guest'])) {
-                    echo '
-                    <div class="dropdown-divider"></div><a href="index.php?page=main&controller=login&action=logout" class="dropdown-item"><class="fa-solid fa-arrow-right-from-bracket"></class=>Logout</a></a></div>
-                    ';
-                } else if (isset($_SESSION['user'])) {
-                    echo '
-                    <div class="dropdown-divider"></div><a href="index.php?page=main&controller=login&action=logout" class="dropdown-item"><class="fa-solid fa-arrow-right-from-bracket"></class=>Logout</a></a></div>
-                    ';
-                }
-                ?>
-            </div>
-
         </div>
-        </div>
-
-
-
-
-
-
-    </nav>
+        <ul class="header__sort-bar">
+            <li class="header__sort-item">
+                <a href="#" class="header__sort-link">Liên quan</a>
+            </li>
+            <li class="header__sort-item header__sort-item--active">
+                <a href="#" class="header__sort-link">Mới nhất</a>
+            </li>
+            <li class="header__sort-item">
+                <a href="#" class="header__sort-link">Bán chạy</a>
+            </li>
+            <li class="header__sort-item">
+                <a href="#" class="header__sort-link">Giá</a>
+            </li>
+        </ul>
+    </header>
