@@ -31,7 +31,7 @@
                 ?>
             </div>
             <div class="col-md-6 text-center order-1 order-md-2">
-                <img class="img-fluid" src="/Source_code/public/images/visual.png" alt="screenshot">
+                <img class="img-fluid" src="/e_commerce/public/images/visual.png" alt="screenshot">
             </div>
         </div>
     </div>

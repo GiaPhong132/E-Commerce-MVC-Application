@@ -85,19 +85,19 @@
 </script>
 
 
-<script type="text/javascript" src="/Source_code/public/js/main.js"></script>
-<script type="text/javascript" src="/Source_code/public/js/custom.js"></script>
+<script type="text/javascript" src="/e_commerce/public/js/main.js"></script>
+<script type="text/javascript" src="/e_commerce/public/js/custom.js"></script>
 
 <!-- JAVASCRIPTS -->
-<script src="/Source_code/public/plugins/jquery/jquery.js"></script>
-<script src="/Source_code/public/plugins/popper/popper.min.js"></script>
-<script src="/Source_code/public/plugins/bootstrap/bootstrap.min.js"></script>
-<script src="/Source_code/public/plugins/owl-carousel/owl.carousel.min.js"></script>
+<script src="/e_commerce/public/plugins/jquery/jquery.js"></script>
+<script src="/e_commerce/public/plugins/popper/popper.min.js"></script>
+<script src="/e_commerce/public/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="/e_commerce/public/plugins/owl-carousel/owl.carousel.min.js"></script>
 
-<script src="/Source_code/public/plugins/syotimer/jquery.syotimer.min.js"></script>
-<script src="/Source_code/public/plugins/aos/aos.js"></script>
+<script src="/e_commerce/public/plugins/syotimer/jquery.syotimer.min.js"></script>
+<script src="/e_commerce/public/plugins/aos/aos.js"></script>
 
-<script src="/Source_code/public/js/custom.js"></script>
+<script src="/e_commerce/public/js/custom.js"></script>
 
 
 </body>

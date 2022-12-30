@@ -11,32 +11,32 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/Source_code/public/images/icons/favicon_register.png" />
+    <link rel="icon" type="image/png" href="/e_commerce/public/images/icons/favicon_register.png" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/fonts/iconic/css/material-design-iconic-font.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/vendor/animate/animate.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/vendor/css-hamburgers/hamburgers.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/vendor/animsition/css/animsition.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/vendor/daterangepicker/daterangepicker.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/css/util.css">
-    <link rel="stylesheet" type="text/css" href="/Source_code/public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/e_commerce/public/css/main.css">
 
 </head>
 
 <body>
     <div class="limiter">
-        <div class="container-login100" style="background-image: url('/Source_code/public/images/tech-blocks.jpeg');">
+        <div class="container-login100" style="background-image: url('/e_commerce/public/images/tech-blocks.jpeg');">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 
                 <form action="index.php?page=main&controller=register&action=submit" method="POST" class="login100-form validate-form">
@@ -144,7 +144,7 @@
 
                 </form>
 
-                <div class="login100-more" style="background-image: url('/Source_code/public/assets/img/slide/VNG Campus 31.jpg');">
+                <div class="login100-more" style="background-image: url('/e_commerce/public/assets/img/slide/VNG Campus 31.jpg');">
                 </div>
             </div>
 

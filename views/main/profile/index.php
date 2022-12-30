@@ -1,6 +1,6 @@
 <?php
 
-require_once("/xampp/htdocs/Source_code/views/main/navbar.php");
+require_once("/xampp/htdocs/e_commerce/views/main/navbar.php");
 
 ?>
 
@@ -11,7 +11,7 @@ require_once("/xampp/htdocs/Source_code/views/main/navbar.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" type="image/png" href="/Source_code/public/images/icons/favicon_profile.png" /> -->
+    <!-- <link rel="icon" type="image/png" href="/e_commerce/public/images/icons/favicon_profile.png" /> -->
     <title>Document</title>
 
 
@@ -173,4 +173,4 @@ require_once("/xampp/htdocs/Source_code/views/main/navbar.php");
 
 
 
-<?php include_once("/xampp/htdocs/Source_code/views/main/footer.php"); ?>
+<?php include_once("/xampp/htdocs/e_commerce/views/main/footer.php"); ?>
