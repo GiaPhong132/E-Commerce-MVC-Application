@@ -139,7 +139,7 @@ if (isset($_SESSION['guest'])) {
                     <i class="header__mobile-search-icon fas fa-search"></i>
                 </label>
                 <div class="header__logo">
-                    <a href="./index.html" class="header__logo-link">
+                    <a href="index.php?page=main&controller=paginate&action=index" class="header__logo-link">
                         <img src="/E_commerce/public/assets/img/logo/logo-full-white.png" class="header__logo-img">
                     </a>
                 </div>
