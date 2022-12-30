@@ -93,7 +93,7 @@ if (isset($_SESSION['guest'])) {
                                 <a href="#" class="header__nav-item-link header__nav-item--bold">' . $_SESSION['guest'] . '</a>
                                 <ul class="header__nav-user-menu">
                                     <li class="header__nav-user-item">
-                                        <a href="#">Tài khoản của tôi</a>
+                                        <a href="index.php?page=main&controller=profile&action=index">Tài khoản của tôi</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="#">Đơn mua</a>
