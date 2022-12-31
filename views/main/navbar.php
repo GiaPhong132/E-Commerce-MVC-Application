@@ -136,7 +136,7 @@ if (isset($_SESSION['guest'])) {
                     <i class="header__mobile-search-icon fas fa-search"></i>
                 </label>
                 <div class="header__logo">
-                    <a href="index.php?page=main&controller=paginate&action=index" class="header__logo-link">
+                    <a href="index.php?page=main&controller=product&action=index" class="header__logo-link">
                         <img src="/E_commerce/public/assets/img/logo/logo-full-white.png" class="header__logo-img">
                     </a>
                 </div>
@@ -161,7 +161,7 @@ if (isset($_SESSION['guest'])) {
                     <div class="header__cart-count">3</div>
 
                     <div class="header__cart-list no-cart">
-                        <img src="./assets/img/sp/no-cart.png" class="header__no-cart-img">
+                        <img src="/e_commerce/public/assets/img/sp/no-cart.png" class="header__no-cart-img">
                         <p class="header__no-cart-text">Chưa có sản phẩm</p>
                     </div>
 

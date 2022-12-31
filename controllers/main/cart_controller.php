@@ -27,4 +27,18 @@ class CartController  extends BaseController
         $data = array('result' => $result);
         $this->render('index', $data);
     }
+
+    public function delete()
+    {
+        $idDel = $_GET['idDel'];
+        $conn = mysqli_connect('localhost', 'root', '123');
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+        $query = "Delete from cart where product_id = $idDel";
+        mysqli_query($conn, $query);
+        header('Location: index.php?page=main&controller=cart&action=index');
+    }
 }

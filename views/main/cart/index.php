@@ -5,13 +5,13 @@ require_once __DIR__ . '/../navbar.php';
 
 <div class="app">
     <!--Header-->
-    <header class="header-login">
+    <!-- <header class="header-login">
         <div class="grid wide">
             <div class="header__contain">
                 <div class="header__contain-login">
                     <div class="header__logo">
-                        <a href="./index.html" class="header__logo-link">
-                            <img src="./assets/img/logo/logo-full-orange.png" class="header__logo-img-login">
+                        <a href="index.php?page=main&controller=product&action=index" class="header__logo-link">
+                            <img src="/e_commerce/public/assets/img/logo/logo-full-orange.png" class="header__logo-img-login">
                         </a>
                     </div>
                     <span class="header__label-login">Giỏ hàng</span>
@@ -19,7 +19,7 @@ require_once __DIR__ . '/../navbar.php';
                 <a href="#" class="header__help">Bạn cần giúp đỡ?</a>
             </div>
         </div>
-    </header>
+    </header> -->
     <!--Container-->
     <div class="container-cart">
         <div class="grid wide">
@@ -43,7 +43,11 @@ require_once __DIR__ . '/../navbar.php';
                             </div>
                         </div>
                         <?php
+                        $totalPrice = 0;
+                        $totalAmount = 0;
                         foreach ($result as $row) {
+                            $totalPrice += $row['newPrice'] * $row['amount'];
+                            $totalAmount += $row['amount'];
                             echo '
                                                 <div class="product-cart-container-box-p">
                                             <div class="product-cart-container-turtorial">
@@ -57,15 +61,15 @@ require_once __DIR__ . '/../navbar.php';
                                                 </div>
                                                 <div class="product-cart-list-name">
                                                     <div class="product-cart-list-price">đ</div>
-                                                    79.000
+                                                    ' . $row['newPrice'] / 1000 . '.000
                                                 </div>
-                                                <div class="product-cart-list-name product-cart-list-name-quantity">1</div>
+                                                <div class="product-cart-list-name product-cart-list-name-quantity">' . $row['amount'] . '</div>
                                                 <div class="product-cart-list-name">
                                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                                    <div class="product-cart-list-price-sum-num">79.000</div>
+                                                    <div class="product-cart-list-price-sum-num">' . $row['newPrice'] * $row['amount']  / 1000 . '.000</div>
                                                 </div>
                                                 <div class="product-cart-list-name">
-                                                    <div class="product-cart-list-act">Xóa</div>
+                                                    <div class="product-cart-list-act"><a href="index.php?page=main&controller=cart&action=delete&idDel=' . $row['id'] . '">Xóa</a></div>
                                                 </div>
 
                                             </div>
@@ -75,28 +79,32 @@ require_once __DIR__ . '/../navbar.php';
 
                         ';
                         }
+                        echo '
+                                <div class="product-cart-container-box-footer">
+                                    <div class="product-cart-container-turtorial">
+                                        <div class="product-cart-turtorial-list-footer">
+                                            <div class="product-cart-container-turtorial-checkbox">
+                                                <i class="fa-solid fa-check product-cart-icon-btn"></i>
+                                            </div>
+                                            <div class="product-cart-footer-name">Chọn Tất Cả (' . $totalAmount . ')</div>
+                                            <div class="product-cart-footer-name-price-sum">Tổng Thanh Toán (' . $totalAmount . ' sản phẩm)</div>
+                                            <div class="product-cart-footer-price">
+                                                <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
+                                                <div class="product-cart-footer-price-sum">' . $totalPrice . '</div>
+                                            </div>
+                                            <a href="#" class="btn buy-btn"> Mua hàng</a>
+                                        </div>
+
+                                    </div>
+                                </div>';
 
                         ?>
 
 
 
-                        <div class="product-cart-container-box-footer">
-                            <div class="product-cart-container-turtorial">
-                                <div class="product-cart-turtorial-list-footer">
-                                    <div class="product-cart-container-turtorial-checkbox">
-                                        <i class="fa-solid fa-check product-cart-icon-btn"></i>
-                                    </div>
-                                    <div class="product-cart-footer-name">Chọn Tất Cả (1)</div>
-                                    <div class="product-cart-footer-name-price-sum">Tổng Thanh Toán (1 sản phẩm)</div>
-                                    <div class="product-cart-footer-price">
-                                        <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                        <div class="product-cart-footer-price-sum">79.000</div>
-                                    </div>
-                                    <a href="#" class="btn buy-btn"> Mua hàng</a>
-                                </div>
 
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
                 <div class="col l-1"></div>
