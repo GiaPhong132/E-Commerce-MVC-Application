@@ -11,7 +11,7 @@ require_once(__DIR__ . "/../navbar.php");
         <!-- header -->
 
         <!-- container -->
-        <div class="container">
+        <div class="container-search-result">
             <div class="grid wide">
                 <div class="row sm-gutter">
 
