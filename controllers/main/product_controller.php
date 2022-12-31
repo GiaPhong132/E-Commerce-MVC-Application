@@ -1,6 +1,6 @@
 <?php
 require_once('/xampp/htdocs/E_commerce/controllers/main/base_controller.php');
-// require_once('/xampp/htdocs/E_commerce/models/paginate.php');
+require_once('/xampp/htdocs/E_commerce/models/product.php');
 
 class ProductController  extends BaseController
 {
@@ -39,5 +39,48 @@ class ProductController  extends BaseController
         $result = mysqli_query($conn, $getQuery);
         $data = array('result' => $result);
         $this->render('index', $data);
+    }
+
+    public function getDetail()
+    {
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+        $key = $_GET['productKey'];
+
+        $product = Product::get($key);
+        $data = array('product' => $product);
+        $this->render('detail', $data);
+    }
+
+    public function addToCart()
+    {
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+
+        $email = $_SESSION['guest'];
+        $key = $_GET['productKey'];
+
+        $query = "SELECT * FROM cart where email ='$email' and id = $key ";
+        $result = mysqli_query($conn, $query);
+
+        if ($result->num_rows > 0) {
+        } else {
+            $getQuery = "INSERT INTO  values('$email', $key, 1)";
+            $result = mysqli_query($conn, $getQuery);
+        }
+
+        $product = Product::get($key);
+        $data = array('product' => $product);
+        $this->render('detail', $data);
     }
 }

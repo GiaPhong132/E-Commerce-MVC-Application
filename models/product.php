@@ -4,20 +4,33 @@ class Product
 {
     public $id;
     public $name;
-    public $price;
-    public $description;
-    public $content;
-    public $img;
+    public $oldPrice;
+    public $newPrice;
+    public $sold;
+    public $origin;
+    public $saleOff;
+    public $rating;
+    public $reviews;
+    public $inStock;
+    public $type;
 
-    public function __construct($id, $name, $price, $description, $content, $img)
+    // name,oldPrice,newPrice,sold,origin,saleOff
+
+    public function __construct($id, $name, $oldPrice, $newPrice, $sold, $origin, $saleOff, $rating, $reviews, $inStock, $type)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->price = $price;
-        $this->description = $description;
-        $this->content = $content;
-        $this->img = $img;
+        $this->oldPrice = $oldPrice;
+        $this->newPrice = $newPrice;
+        $this->sold = $sold;
+        $this->origin = $origin;
+        $this->saleOff = $saleOff;
+        $this->rating = $rating;
+        $this->reviews = $reviews;
+        $this->inStock = $inStock;
+        $this->type = $type;
     }
+
 
     static function getAll()
     {
@@ -28,10 +41,15 @@ class Product
             $products[] = new Product(
                 @$product['id'],
                 @$product['name'],
-                @$product['price'],
-                @$product['description'],
-                @$product['content'],
-                @$product['img']
+                @$product['oldPrice'],
+                @$product['newPrice'],
+                @$product['sold'],
+                @$product['origin'],
+                @$product['saleOff'],
+                @$product['rating'],
+                @$product['reviews'],
+                @$product['inStock'],
+                @$product['type']
             );
         }
         return $products;
@@ -45,10 +63,17 @@ class Product
         $product = new Product(
             $result['id'],
             $result['name'],
-            $result['price'],
-            $result['description'],
-            $result['content'],
-            $result['img']
+            $result['oldPrice'],
+            $result['newPrice'],
+            $result['sold'],
+            $result['origin'],
+            $result['saleOff'],
+            $result['rating'],
+            $result['reviews'],
+            $result['inStock'],
+            $result['type']
+
+
         );
         return $product;
     }

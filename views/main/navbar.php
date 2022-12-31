@@ -49,6 +49,17 @@ if (isset($_SESSION['guest'])) {
     <link rel="stylesheet" href="/E_commerce/public/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <link rel="icon" href="/e_commerce/public/assets/img/logo/shopee-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/e_commerce/ui/assets/css/base.css">
+    <link rel="stylesheet" href="/e_commerce/ui/assets/css/style.css">
+    <link rel="stylesheet" href="/e_commerce/ui/assets/css/grid.css">
+    <link rel="stylesheet" href="/e_commerce/ui/assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./index.html">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>

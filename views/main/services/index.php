@@ -96,7 +96,7 @@ require_once(__DIR__ . "/../navbar.php");
                         foreach ($result as $row)
                             echo '
                                         <div class="col l-2-4 m-3 c-6 home-product-item">
-                                             <a class="home-product-item-link" href="#">
+                                             <a class="home-product-item-link" href="index.php?page=main&controller=product&action=getDetail&productKey=' . $row['id'] . '">
                                         <div class="home-product-item__img" style="background-image: url(/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif);"></div>
                                         <div class="home-product-item__info">
                                             <h4 class="home-product-item__name">' . $row['name'] . '</h4>
