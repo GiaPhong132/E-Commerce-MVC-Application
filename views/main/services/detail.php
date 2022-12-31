@@ -84,7 +84,7 @@ require_once __DIR__ . '/../navbar.php';
                             <div class="product-site-option-buy-or-addtocart">
                                 <button class="btn-addtocart product-site-option-add-to-cart">
                                     <i class="fa-solid fa-cart-plus btn-addtocart-icon"></i>
-                                    <a href="index.php?page=main&controller=product&action=getDetail&productKey=<?php echo $product->id ?>">
+                                    <a href="index.php?page=main&controller=product&action=addToCart&productKey=<?php echo $product->id ?>">
                                         <div class="product-site-option-addtocart-title">Thêm vào giỏ hàng</div>
                                     </a>
                                 </button>

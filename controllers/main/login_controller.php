@@ -27,6 +27,10 @@ class LoginController extends BaseController
                 else
                     $_SESSION["guest"] = $username;
 
+                if (isset($_SESSION['oldHeader'])) {
+                    $oldHeader = 'Location: ' . $_SESSION['oldHeader'];
+                    header("$oldHeader");
+                }
                 header('Location: index.php?page=main&controller=product&action=index');
             } else {
                 $err = "Sai tài khoản hoặc mật khẩu";

@@ -61,6 +61,7 @@ class ProductController  extends BaseController
 
     public function addToCart()
     {
+        $key = $_GET['productKey'];
         $conn = mysqli_connect('localhost', 'root', '123');
 
         if (!$conn) {
@@ -69,20 +70,27 @@ class ProductController  extends BaseController
             mysqli_select_db($conn, 'E_commerce');
         }
 
+        if (!isset($_SESSION['guest'])) {
+            session_start();
+            $_SESSION['oldHeader'] = "index.php?page=main&controller=product&action=getDetail&productKey=$key";
+            header('Location: index.php?page=main&controller=login&action=index');
+        }
+
         $email = $_SESSION['guest'];
         $key = $_GET['productKey'];
 
-        $query = "SELECT * FROM cart where email ='$email' and id = $key ";
+        $query = "SELECT * FROM cart where email ='$email' and product_id = $key ";
         $result = mysqli_query($conn, $query);
 
         if ($result->num_rows > 0) {
+            echo "Hello";
         } else {
-            $getQuery = "INSERT INTO  values('$email', $key, 1)";
+            $getQuery = "INSERT INTO cart values('$email', $key, 1)";
             $result = mysqli_query($conn, $getQuery);
         }
 
-        $product = Product::get($key);
-        $data = array('product' => $product);
-        $this->render('detail', $data);
+        // $product = Product::get($key);
+        // $data = array('product' => $product);
+        // $this->render('detail', $data);
     }
 }
