@@ -134,8 +134,7 @@ require_once(__DIR__ . "/../navbar.php");
 
                                 ';
                     } else {
-                        echo '<div class="shopee-search-empty-result-section"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/a60759ad1dabe909c46a817ecbf71878.png" class="shopee-search-empty-result-section__icon"><div class="shopee-search-empty-result-section__title">Không tìm thấy kết quả nào</div><div class="shopee-search-empty-result-section__hint">Hãy thử sử dụng các từ khóa chung chung hơn</div></div>';
-                    }
+                        echo '<div class="shopee-search-empty-result-section"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/a60759ad1dabe909c46a817ecbf71878.png" class="shopee-search-empty-result-section__icon"><div class="shopee-search-empty-result-section__title">Không tìm thấy kết quả nào</div><div class="shopee-search-empty-result-section__hint">Hãy thử sử dụng các từ khóa chung chung hơn</div></div>';                    }
 
                     ?>
                 </div>
