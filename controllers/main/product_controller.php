@@ -19,28 +19,24 @@ class ProductController  extends BaseController
         } else {
             mysqli_select_db($conn, 'E_commerce');
         }
-
-        // $limit = 5;
-        // // update the active page number
-        // if (isset($_GET["pg"])) {
-        //     $page_number  = (int) $_GET["pg"];
-        // } else {
-        //     $page_number = 1;
-        // }
-
-        // $initial_page = ($page_number - 1) * $limit;
-        // get data of selected rows per page
-        // $getQuery = "SELECT * FROM product LIMIT $initial_page, $limit";
-        // $result = mysqli_query($conn, $getQuery);
-
         $getQuery = "SELECT * FROM product limit 20";
         $result = mysqli_query($conn, $getQuery);
+        $data = array('result' => $result);
+        $this->render('index', $data);
+    }
 
-        // $getQuery = "SELECT COUNT(*) FROM product";
-        // $result_2 = mysqli_query($conn, $getQuery);
-        // $row_2 = mysqli_fetch_row($result_2);
-        // $total_rows = $row_2[0];
+    public function search()
+    {
+        $conn = mysqli_connect('localhost', 'root', '123');
 
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+        $key = $_POST['searchKey'];
+        $getQuery = "SELECT * FROM product where locate('$key', name) > 0";
+        $result = mysqli_query($conn, $getQuery);
         $data = array('result' => $result);
         $this->render('index', $data);
     }
