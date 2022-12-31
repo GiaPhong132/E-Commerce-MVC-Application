@@ -70,11 +70,15 @@ class ProductController  extends BaseController
             mysqli_select_db($conn, 'E_commerce');
         }
 
-        if (!isset($_SESSION['guest'])) {
+        if (session_status() != PHP_SESSION_ACTIVE)
             session_start();
+
+        if (!isset($_SESSION['guest'])) {
+            // session_start();
             $_SESSION['oldHeader'] = "index.php?page=main&controller=product&action=getDetail&productKey=$key";
             header('Location: index.php?page=main&controller=login&action=index');
         }
+
 
         $email = $_SESSION['guest'];
         $key = $_GET['productKey'];
@@ -83,14 +87,36 @@ class ProductController  extends BaseController
         $result = mysqli_query($conn, $query);
 
         if ($result->num_rows > 0) {
-            echo "Hello";
+            $query = "UPDATE  cart set amount= amount + 1 where email ='$email' and product_id = $key ";
+            $result = mysqli_query($conn, $query);
         } else {
             $getQuery = "INSERT INTO cart values('$email', $key, 1)";
             $result = mysqli_query($conn, $getQuery);
         }
 
-        // $product = Product::get($key);
-        // $data = array('product' => $product);
-        // $this->render('detail', $data);
+        $product = Product::get($key);
+        $data = array('product' => $product);
+        $this->render('detail', $data);
+    }
+
+    public function getPay()
+    {
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+
+        if (session_status() != PHP_SESSION_ACTIVE)
+            session_start();
+        $email = $_SESSION['guest'];
+
+        $query = "select * from cart join product p on p.id = cart.product_id and email ='$email';";
+        $result = mysqli_query($conn, $query);
+
+        $data = array('cart' => $result);
+        $this->render('payment', $data);
     }
 }
