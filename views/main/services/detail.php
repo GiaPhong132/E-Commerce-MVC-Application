@@ -25,9 +25,10 @@ require_once __DIR__ . '/../navbar.php';
                             <span class="product-site-buy-title--span"><?php echo $product->name ?></span>
                             <div class="product-site-rate ">
                                 <div class="product-site-rate-and-star product-site-rate--separate">
-                                    <div class="product-site-rating"><?php echo $count = $product->rating . '.' . rand(1, 9) ?></div>
+                                    <div class="product-site-rating"><?php echo $count = $product->rating  ?></div>
                                     <div class="product-site-star">
                                         <?php
+                                        $count = floor($count);
                                         for ($i = 0; $i < $count; $i++) {
                                             echo '
                                             <i class="fa-solid fa-star product-site-star-icon"></i>
@@ -179,7 +180,7 @@ require_once __DIR__ . '/../navbar.php';
                                 <div class="product-rating-overview">
                                     <div class="product-rating-overview__briefing">
                                         <div class="product-rating-overview__score-wrapper">
-                                            <span class="product-rating-overview__rating-score">4.9</span>
+                                            <span class="product-rating-overview__rating-score"><?php echo $product->rating  ?></span>
                                             <span class="product-rating-overview__rating-score-out-of"> trên 5 </span>
                                         </div>
 
