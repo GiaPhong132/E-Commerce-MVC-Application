@@ -109,7 +109,7 @@ require_once __DIR__ . '/../navbar.php';
                             <div class="product-site-shop-infor-1">
                                 <div class="product-site-shop-infor-1-1">
                                     <div class="product-site-shop-infor-label">Đánh giá</div>
-                                    <div class="product-site-shop-infor-num"><?php echo $product->reviews  ?></div>
+                                    <div class="product-site-shop-infor-num"><?php echo $shop->reviews  ?></div>
                                 </div>
                                 <div class="product-site-shop-infor-1-2">
                                     <div class="product-site-shop-infor-label">Sản phẩm</div>
@@ -119,7 +119,7 @@ require_once __DIR__ . '/../navbar.php';
                             <div class="product-site-shop-infor-1">
                                 <div class="product-site-shop-infor-1-1">
                                     <div class="product-site-shop-infor-label">Tỉ lệ phản hồi</div>
-                                    <div class="product-site-shop-infor-num">99%</div>
+                                    <div class="product-site-shop-infor-num"><?php echo $shop->response_rating ?>%</div>
                                 </div>
                                 <div class="product-site-shop-infor-1-2">
                                     <div class="product-site-shop-infor-label">Thời gian phản hồi</div>
@@ -129,11 +129,11 @@ require_once __DIR__ . '/../navbar.php';
                             <div class="product-site-shop-infor-1">
                                 <div class="product-site-shop-infor-1-1">
                                     <div class="product-site-shop-infor-label">Tham gia</div>
-                                    <div class="product-site-shop-infor-num">2 năm trước</div>
+                                    <div class="product-site-shop-infor-num"><?php echo date("Y") -  date("Y", strtotime($shop->found)) ?> năm trước</div>
                                 </div>
                                 <div class="product-site-shop-infor-1-2">
                                     <div class="product-site-shop-infor-label">Người theo dõi</div>
-                                    <div class="product-site-shop-infor-num"><?php echo rand(10, 80) . '.' . rand(1, 9) ?> k</div>
+                                    <div class="product-site-shop-infor-num"><?php echo $shop->followers / 1000 ?> k</div>
                                 </div>
                             </div>
                         </div>
@@ -149,9 +149,9 @@ require_once __DIR__ . '/../navbar.php';
                                     <div class="product-site-infor-detail-name">Gửi từ</div>
                                 </div>
                                 <div class="product-site-infor-detail-2">
-                                    <div class="product-site-infor-detail-inf">Điện thoại</div>
+                                    <div class="product-site-infor-detail-inf"><?php echo $product->type ?></div>
                                     <div class="product-site-infor-detail-inf"><?php echo $product->inStock ?></div>
-                                    <div class="product-site-infor-detail-inf">Quận Hoàn Kiếm, Hà Nội</div>
+                                    <div class="product-site-infor-detail-inf"><?php echo $product->origin ?></div>
                                 </div>
                             </div>
                         </div>
