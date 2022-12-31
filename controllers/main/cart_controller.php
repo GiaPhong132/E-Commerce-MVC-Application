@@ -11,7 +11,8 @@ class CartController  extends BaseController
 
     public function index()
     {
-        session_start();
+        if (session_status() != PHP_SESSION_ACTIVE)
+            session_start();
         $conn = mysqli_connect('localhost', 'root', '123');
 
         if (!$conn) {
