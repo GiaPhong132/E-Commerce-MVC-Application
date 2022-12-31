@@ -1,6 +1,7 @@
 <?php
 require_once('/xampp/htdocs/E_commerce/controllers/main/base_controller.php');
 require_once('/xampp/htdocs/E_commerce/models/product.php');
+require_once('/xampp/htdocs/E_commerce/models/shop.php');
 
 class ProductController  extends BaseController
 {
@@ -51,9 +52,10 @@ class ProductController  extends BaseController
             mysqli_select_db($conn, 'E_commerce');
         }
         $key = $_GET['productKey'];
-
         $product = Product::get($key);
-        $data = array('product' => $product);
+        $shop  = Shop::get($product->shop_id);
+
+        $data = array('product' => $product, 'shop' => $shop);
         $this->render('detail', $data);
     }
 

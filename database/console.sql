@@ -1,4 +1,4 @@
 use e_commerce;
 
-select *
-from cart join product p on cart.product_id = p.id and email='giaphong132@gmail.com'
+create view tmp as
+select * from product p join shop s on p.shop_id = s.shop_code

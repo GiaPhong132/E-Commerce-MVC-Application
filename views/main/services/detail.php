@@ -20,25 +20,6 @@ require_once __DIR__ . '/../navbar.php';
                     <div class="product-site-cost">
                         <div class="product-site-image">
                             <img src="/e_commerce/public/assets/img/products/<?php echo $product->id ?>.jfif" alt="Errors" class="product-site-infor-of-product">
-                            <!-- <div class="product-site-list-img-product">
-                                <img src="https://phongapple.vn/wp-content/uploads/2021/10/13tr.png" alt="" class="product-site-list-img-product-mini">
-                                <img src="https://product.hstatic.net/1000063620/product/iphone-13-pro-max-green_d31c599a9e6c4d34a1e7ee67c03faa8a_1024x1024.jpg" alt="" class="product-site-list-img-product-mini">
-                                <img src="https://product.hstatic.net/1000063620/product/iphone-13-pro-max-green_d31c599a9e6c4d34a1e7ee67c03faa8a_1024x1024.jpg" alt="" class="product-site-list-img-product-mini">
-                                <img src="https://product.hstatic.net/1000063620/product/iphone-13-pro-max-green_d31c599a9e6c4d34a1e7ee67c03faa8a_1024x1024.jpg" alt="" class="product-site-list-img-product-mini">
-                                <img src="https://images.fixjeiphone.nl/wp-content/uploads/2022/09/Refurbished-iPhone-13-mini-5.png" alt="" class="product-site-list-img-product-mini">
-                            </div> -->
-                            <!-- <div class="product-site-list-img-product-footer">
-                                <div class="product-site-list-img-product-share product-site-list-img-product-share--separate">
-                                    <div class="product-site-list-img-product-share-title">Chia sẻ:</div>
-                                    <a href="" class="product-site--list-share"><i class="fa-brands fa-facebook-messenger product-site-list-img-product-share-icon product-site-list-img-product-share-icon-mess"></i></a>
-                                    <a href="" class="product-site--list-share"><i class="fa-brands fa-facebook product-site-list-img-product-share-icon product-site-list-img-product-share-icon-facebook"></i></a>
-                                    <a href="" class="product-site--list-share"><i class="fa-brands fa-pinterest product-site-list-img-product-share-icon product-site-list-img-product-share-icon-printerest"></i></a>
-                                </div>
-                                <div class="product-site-list-img-product-love">
-                                    <div class=""><i class="fa-solid fa-heart product-site-list-img-product-love-icon"></i></div>
-                                    <div class="product-site-list-img-product-love-title">Đã thích (<?php echo $product->reviews ?>k)</div>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="product-site-buy">
                             <span class="product-site-buy-title--span"><?php echo $product->name ?></span>
@@ -112,11 +93,11 @@ require_once __DIR__ . '/../navbar.php';
                     </div>
                     <div class="product-site-shop">
                         <div class="product-site-shop-avatar">
-                            <img src="https://i.pinimg.com/236x/8d/b4/be/8db4beec56f88a7eb7ab0f4509011d70.jpg" alt="" class="product-site-shop-avatar-img">
+                            <img src="/e_commerce/public/assets/img/shop/<?php echo $shop->name ?>.png" alt="Error" class=" product-site-shop-avatar-img">
 
                         </div>
                         <div class="product-site-shop-status product-site-shop-status--separate">
-                            <div class="product-site-shop-status-1">fpt shop</div>
+                            <div class="product-site-shop-status-1"><?php echo $shop->name ?></div>
                             <div class="product-site-shop-status-2">Online <?php echo rand(1, 5) ?> giờ trước</div>
                             <div class="product-site-shop-status-3">
                                 <button class="btn-mini-1 btn-mini-color">Chat ngay</button>

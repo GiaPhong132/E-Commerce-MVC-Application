@@ -13,10 +13,11 @@ class Product
     public $reviews;
     public $inStock;
     public $type;
+    public $shop_id;
 
     // name,oldPrice,newPrice,sold,origin,saleOff
 
-    public function __construct($id, $name, $oldPrice, $newPrice, $sold, $origin, $saleOff, $rating, $reviews, $inStock, $type)
+    public function __construct($id, $name, $oldPrice, $newPrice, $sold, $origin, $saleOff, $rating, $reviews, $inStock, $type, $shop_id)
     {
         $this->id = $id;
         $this->name = $name;
@@ -29,6 +30,7 @@ class Product
         $this->reviews = $reviews;
         $this->inStock = $inStock;
         $this->type = $type;
+        $this->shop_id = $shop_id;
     }
 
 
@@ -49,7 +51,9 @@ class Product
                 @$product['rating'],
                 @$product['reviews'],
                 @$product['inStock'],
-                @$product['type']
+                @$product['type'],
+                @$product['shop_id']
+
             );
         }
         return $products;
@@ -71,7 +75,8 @@ class Product
             $result['rating'],
             $result['reviews'],
             $result['inStock'],
-            $result['type']
+            $result['type'],
+            $result['shop_id']
 
 
         );
