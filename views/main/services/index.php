@@ -1,5 +1,5 @@
 <?php
-require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
+require_once(__DIR__ . "/../navbar.php");
 ?>
 
 <!DOCTYPE html>
