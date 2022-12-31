@@ -82,6 +82,7 @@ require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
                                 </div>
                             </div>
                         </div>
+
                         <!-- home product -->
                         <div class="home-product">
                             <div id="list-product" class="row sm-gutter">

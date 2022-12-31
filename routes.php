@@ -1,12 +1,13 @@
 <?php
 $pages = array(
     'error' => ['errors'],
-    'main' => ['layouts', 'about', 'services', 'login', 'register', 'profile', 'product'],
+    'main' => ['layouts', 'about', 'services', 'login', 'register', 'profile', 'product', 'cart'],
     'admin' => ['layouts', 'members', 'products', 'news', 'comments']
 );
 $controllers = array(
     'errors' => ['index'],
     'layouts' => ['index'],
+    'cart' => ['index'],
 
     'members' => ['index', 'addUser', 'edit', 'getAll'],
     'product' => ['index', 'add', 'edit', 'delete', 'getAll'],

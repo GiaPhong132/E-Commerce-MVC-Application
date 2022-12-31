@@ -17,7 +17,7 @@ if (isset($_SESSION['guest'])) {
     <!-- <title>Shope - Bách Khoa - HCMUT</title> -->
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/Source_code/public/images/icons/favicon_01.png" />
+    <link rel="icon" type="image/png" href="/E_commerce/public/images/icons/favicon_01.png" />
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <!-- Bootstrap -->
@@ -44,25 +44,25 @@ if (isset($_SESSION['guest'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap -->
-    <!-- <link href="/Source_code/public/plugins/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="/E_commerce/public/plugins/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
     <!-- themify icon -->
-    <link rel="stylesheet" href="/Source_code/public/plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/E_commerce/public/plugins/themify-icons/themify-icons.css">
     <!-- Owl Carousel -->
-    <link href="/Source_code/public/plugins/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet" media="screen">
+    <link href="/E_commerce/public/plugins/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet" media="screen">
     <!-- Owl Carousel Theme -->
-    <link href="/Source_code/public/plugins/owl-carousel/assets/owl.theme.green.min.css" rel="stylesheet" media="screen">
+    <link href="/E_commerce/public/plugins/owl-carousel/assets/owl.theme.green.min.css" rel="stylesheet" media="screen">
     <!-- Fancy Box -->
-    <link href="/Source_code/public/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="/E_commerce/public/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet">
     <!-- AOS -->
-    <link rel="stylesheet" href="/Source_code/public/plugins/aos/aos.css">
+    <link rel="stylesheet" href="/E_commerce/public/plugins/aos/aos.css">
 
     <!-- CSS -->
-    <link href="/Source_code/public/css/layout/navbar.css" rel="stylesheet">
-    <link href="/Source_code/public/css/layout/footer.css" rel="stylesheet">
-    <link href="/Source_code/public/css/layout/hero.css" rel="stylesheet">
-    <link href="/Source_code/public/css/layout/product.css" rel="stylesheet">
-    <link href="/Source_code/public/css/layout/timeline.css" rel="stylesheet">
-    <link href="/Source_code/public/css/layout/profile.css" rel="stylesheet">
+    <link href="/E_commerce/public/css/layout/navbar.css" rel="stylesheet">
+    <link href="/E_commerce/public/css/layout/footer.css" rel="stylesheet">
+    <link href="/E_commerce/public/css/layout/hero.css" rel="stylesheet">
+    <link href="/E_commerce/public/css/layout/product.css" rel="stylesheet">
+    <link href="/E_commerce/public/css/layout/timeline.css" rel="stylesheet">
+    <link href="/E_commerce/public/css/layout/profile.css" rel="stylesheet">
     <title>Shepo</title>
     <link rel="icon" href="../public/assets/img/logo/shopee-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -155,7 +155,9 @@ if (isset($_SESSION['guest'])) {
                 <!-- header__cart--no-cart -->
                 <!-- header__cart--has-cart -->
                 <div class="header__cart header__cart--has-cart">
-                    <i class="header__cart-icon fas fa-shopping-cart"></i>
+                    <a href="index.php?page=main&controller=cart&action=index">
+                        <i class="header__cart-icon fas fa-shopping-cart"></i>
+                    </a>
                     <div class="header__cart-count">3</div>
 
                     <div class="header__cart-list no-cart">

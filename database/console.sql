@@ -1,5 +1,4 @@
 use e_commerce;
 
 select *
-from product
-where id =44
+from cart join product p on cart.product_id = p.id and email='giaphong132@gmail.com'
