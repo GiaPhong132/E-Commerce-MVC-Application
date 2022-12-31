@@ -1972,3 +1972,26 @@ border-color: red green blue yellow */
     font-size: 16px;
     color: var(--primary-color);
 }
+
+/* Search result */
+.container-search-result{
+  
+    background-color: var(--contain-color);
+    padding-top: 24px;
+}
+
+.shopee-search-empty-result-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+.shopee-search-empty-result-section__title{
+    font-size: 18px;
+}
+.shopee-search-empty-result-section__hint{
+    font-size: 18px;
+    color: var(--chatbot-gray-3);
+}
