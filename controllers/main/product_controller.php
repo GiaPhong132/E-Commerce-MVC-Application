@@ -12,6 +12,7 @@ class ProductController  extends BaseController
 
     public function index()
     {
+        $signal = "noFilter";
         session_start();
         $conn = mysqli_connect('localhost', 'root', '123');
 
@@ -35,7 +36,7 @@ class ProductController  extends BaseController
 
         $getQuery = "SELECT * FROM product limit 20 offset $offset";
         $result = mysqli_query($conn, $getQuery);
-        $data = array('result' => $result, 'currPage' => $currPage);
+        $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
         $this->render('index', $data);
     }
 
