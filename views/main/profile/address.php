@@ -2,60 +2,18 @@
 require_once __DIR__ . '/../navbar.php';
 ?>
 
-<div class="app">
+<div class="app" style="background-color: #f5f5f5;">
     <!-- header -->
 
     <!-- Container -->
     <div class="container">
         <div class="grid wide">
             <div class="row sm-gutter">
-                <div class="col l-2">
-                    <div class="container-profile-list">
-                        <div class="container-profile-list-header"></div>
-                        <div class="container-profile-list-body">
-                            <div class="container-profile-list-name">
-                                <div class="container-profile-list-name-1">
-                                    <i class="fa-solid fa-user container-profile-list-name-icon"></i>
-                                </div>
-                                <div class="container-profile-list-name-2">Tài khoản của tôi</div>
-                            </div>
-                            <div class="container-profile-list-name">
-                                <div class="container-profile-list-name-3">
-                                    <a href="profile.html" class="container-profile-list-name-5">
-                                        <div class="container-profile-list-name-4">Hồ sơ</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="container-profile-list-name">
-                                <div class="container-profile-list-name-3">
-                                    <a href="#" class="container-profile-list-name-5">
-                                        <div class="container-profile-list-name-4 container-profile-list-name-active">Địa chỉ</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="container-profile-list-name">
-                                <div class="container-profile-list-name-3">
-                                    <a href="#" class="container-profile-list-name-5">
-                                        <div class="container-profile-list-name-4">Đổi mật khẩu</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="container-profile-list-name">
-                                <div class="container-profile-list-name-1">
-                                    <i class="fa-regular fa-clipboard container-profile-list-name-icon"></i>
-                                </div>
-                                <div class="container-profile-list-name-2">Đơn mua</div>
-                            </div>
-                            <div class="container-profile-list-name">
-                                <div class="container-profile-list-name-1">
-                                    <i class="fa-solid fa-bell container-profile-list-name-icon"></i>
-                                </div>
-                                <div class="container-profile-list-name-2">Thông báo</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <?php require_once __DIR__ . '/sidebar.php'; ?>
+
                 <div class="col l-10">
+
                     <div class="container-profile">
                         <div class="container-address-header container-profile-header--separate">
                             <div class="container-address-header-1">Địa chỉ của tôi</div>
@@ -87,9 +45,20 @@ require_once __DIR__ . '/../navbar.php';
 
                                         <br>
                                         <button type="submit" class="btn btn-primary" style="background-color:cadetblue">Cập Nhật</button>
+
                                         </form>
 
                                     </div>
+                                    <?php
+                                    if (isset($message)) {
+
+                                        echo '
+                        <div class="alert alert-success">
+                        <strong>' . $message . '</strong>
+                    </div>
+                        ';
+                                    }
+                                    ?>
                                 </div>
 
                             </div>

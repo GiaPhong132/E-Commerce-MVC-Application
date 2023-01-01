@@ -94,6 +94,8 @@ class ProfileController extends BaseController
         $query = "Update user set address='$address', phone='$phone' where email='$email';";
         $req = mysqli_query($conn, $query);
 
-        $this->render('address');
+        $message = "Update Successfully!";
+        $data = array('message' => $message);
+        $this->render('address', $data);
     }
 }
