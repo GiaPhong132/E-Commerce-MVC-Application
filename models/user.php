@@ -12,9 +12,10 @@ class User
     public $createAt;
     public $updateAt;
     public $address;
+    public $birthday;
     public $password;
 
-    public function __construct($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $createAt, $updateAt, $address, $password)
+    public function __construct($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $createAt, $updateAt, $address, $birthday, $password)
     {
         $this->email = $email;
         $this->profile_photo = $profile_photo;
@@ -26,6 +27,7 @@ class User
         $this->createAt = $createAt;
         $this->updateAt = $updateAt;
         $this->address = $address;
+        $this->birthday = $birthday;
         $this->password = $password;
     }
 
@@ -49,6 +51,7 @@ class User
                 $user['createAt'],
                 $user['updateAt'],
                 $user['address'],
+                $user['birthday'],
                 '' // Do not return password
             );
         }
@@ -60,7 +63,7 @@ class User
         $db = DB::getInstance();
         $req = $db->query(
             "
-            SELECT email, profile_photo, fname, lname, gender, age, phone, createAt, updateAt,address
+            SELECT email, profile_photo, fname, lname, gender, age, phone, createAt, updateAt,address,birthday
             FROM user
             WHERE email = '$email'
             ;"
@@ -77,6 +80,7 @@ class User
             $result['createAt'],
             $result['updateAt'],
             $result['address'],
+            $result['birthday'],
             '' // Do not return password
         );
         return $user;
@@ -106,13 +110,13 @@ class User
     }
 
 
-    static function update($email, $profile_photo, $fname, $lname, $gender, $age, $phone)
+    static function update($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $birthday)
     {
         $db = DB::getInstance();
         $req = $db->query(
             "
             UPDATE user
-            SET profile_photo = '$profile_photo', fname = '$fname', lname = '$lname', gender= '$gender', age ='$age', phone = '$phone', updateAt = NOW()
+            SET birthday=$birthday ,profile_photo = '$profile_photo', fname = '$fname', lname = '$lname', gender= '$gender', age ='$age', phone = '$phone', updateAt = NOW()
             WHERE email = '$email'
             ;"
         );

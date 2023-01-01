@@ -1,177 +1,172 @@
-<?php
-// if (!isset($_SESSION['guest']))
-//     header('Location: index.php?page=main&controller=login&action=index');
-require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
-
+<?php require_once __DIR__ . '/../navbar.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="app" style="background-color: #f5f5f5;">
+    <!-- header -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" type="image/png" href="/E_commerce/public/images/icons/favicon_profile.png" /> -->
-    <title>Document</title>
+    <!-- Container -->
+    <div class="container">
+        <div class="grid wide">
+            <div class="row sm-gutter">
+                <div class="col l-2">
+                    <div class="container-profile-list">
+                        <div class="container-profile-list-header"></div>
+                        <div class="container-profile-list-body">
+                            <div class="container-profile-list-name">
+                                <div class="container-profile-list-name-1">
+                                    <i class="fa-solid fa-user container-profile-list-name-icon"></i>
+                                </div>
+                                <div class="container-profile-list-name-2">Tài khoản của tôi</div>
+                            </div>
+                            <div class="container-profile-list-name">
+                                <div class="container-profile-list-name-3">
+                                    <a href="profile.html" class="container-profile-list-name-5">
+                                        <div class="container-profile-list-name-4 container-profile-list-name-active">Hồ sơ</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="container-profile-list-name">
+                                <div class="container-profile-list-name-3">
+                                    <a href="address.html" class="container-profile-list-name-5">
+                                        <div class="container-profile-list-name-4">Địa chỉ</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="container-profile-list-name">
+                                <div class="container-profile-list-name-3">
+                                    <a href="#" class="container-profile-list-name-5">
+                                        <div class="container-profile-list-name-4">Đổi mật khẩu</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="container-profile-list-name">
+                                <div class="container-profile-list-name-1">
+                                    <i class="fa-regular fa-clipboard container-profile-list-name-icon"></i>
+                                </div>
+                                <div class="container-profile-list-name-2">Đơn mua</div>
+                            </div>
+                            <div class="container-profile-list-name">
+                                <div class="container-profile-list-name-1">
+                                    <i class="fa-solid fa-bell container-profile-list-name-icon"></i>
+                                </div>
+                                <div class="container-profile-list-name-2">Thông báo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l-10">
+                    <div class="container-profile">
+                        <div class="container-profile-header container-profile-header--separate">
+                            <div class="container-profile-header-1">Hồ sơ của tôi</div>
+                            <div class="container-profile-header-2">Quản lí thông tin hồ sơ để bảo mật tài khoản</div>
+                        </div>
+                        <div class="container-profile-body">
+                            <div class="col l-8">
+                                <div class="container-profile-body-content container-profile-body-content--separate">
+                                    <div class="container-profile-body-content-name">
+                                        <div class="container-profile-body-content-name-label">Tên đăng nhập</div>
+                                        <div class="container-profile-body-content-name-label">Tên</div>
+                                        <div class="container-profile-body-content-name-label">Email</div>
+                                        <div class="container-profile-body-content-name-label">Số điện thoại</div>
+                                        <div class="container-profile-body-content-name-label">Giới tính</div>
+                                        <div class="container-profile-body-content-name-label">Ngày sinh</div>
+                                    </div>
+
+                                    <form action="index.php?page=main&controller=profile&action=editInfo" enctype="multipart/form-data" method="POST">
+                                        <div class="container-profile-body-content-detail">
+                                            <div class="container-profile-body-content-name-infor"><?php echo $data->email ?></div>
+                                            <div class="container-profile-body-content-name-infor">
+                                                <input type="text" value="<?php echo $data->fname . ' ' . $data->lname ?>">
+                                            </div>
+                                            <div class="container-profile-body-content-name-infor"><?php echo $data->email ?> </div>
+                                            <div class="container-profile-body-content-name-infor">
+                                                <input type="text" value="<?php echo $data->phone ?>">
+                                            </div>
+                                            <div class="container-profile-body-content-name-infor-sex">
+                                                <div class="container-profile-body-content-name-infor-sex-val">
+                                                    <?php
+                                                    $gender = $data->gender;
+                                                    if ($gender == 1) {
+                                                        echo '
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val" checked>
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nam</div>
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
+                                                        ';
+                                                    } elseif ($gender == 0) {
+                                                        echo '
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nam</div>
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val" checked>
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
+                                                        ';
+                                                    } else {
+                                                        echo '
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nam</div>
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
+                                                        <input type="radio" name="container-profile-body-content-name-infor-val" checked>
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
+                                                        ';
+                                                    }
+                                                    ?>
 
 
-    <style>
-        img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-        }
-    </style>
-</head>
-
-<body>
-
-</body>
-
-</html>
 
 
-<div class="container rounded bg-white mt-5 mb-5">
-    <form action="index.php?page=main&controller=profile&action=editInfo" enctype="multipart/form-data" method="POST">
 
-        <div class="row">
-            <div class="col-md-4 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                                </div>
+                                                <!-- <div class="container-profile-body-content-name-infor-sex-val">
+                                                        <input type="radio" class="container-profile-body-content-name-infor-val" value="Nam">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
+                                                    </div>
+                                                    <div class="container-profile-body-content-name-infor-sex-val">
+                                                        <input type="radio" class="container-profile-body-content-name-infor-val" value="Nam">
+                                                        <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
+                                                    </div> -->
+                                            </div>
+                                            <div class="container-profile-body-content-name-infor-birthday">
+                                                <?php
 
+                                                $date = date_create($data->birthday);
+                                                // echo var_dump($date);
+                                                $dateUI = date_format($date, 'Y') . '-' . date_format($date, 'm') . '-' . date_format($date, 'd');
+                                                ?>
+                                                <input type="date" value="<?php echo $dateUI ?>" class="container-profile-body-content-name-infor-birthday-val">
+                                            </div>
+                                        </div>
+                                </div>
+                                <input type="button" class="container-profile-button" value="Lưu">
+                            </div>
+                            <div class="col l-2">
+                                <div class="container-profile-body-avt">
+                                    <div class="container-profile-body-avt-in">
+                                        <img src="https://kiemtientuweb.com/ckfinder/userfiles/images/avatar-fb/avatar-fb-1.jpg" alt="" class="container-profile-body-avt-img">
+                                        <input type="button" class="container-profile-body-avt-choose-img-btn" value="Chọn ảnh">
+                                        <div class="container-profile-body-avt-name-reg">
+                                            <div class="container-profile-body-avt-name">Dung lượng file tối đa 1 MB</div>
+                                            <div class="container-profile-body-avt-name">Định dạng: .JPEG, >PNG</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <?php
-                    echo "<img src='$data->profile_photo' >";
-                    ?>
-                    <!-- <img class="rounded-circle mt-5" width="150px" src="$data->profile_photo" alt="avatar"> -->
+                            </form>
 
-                    <br>
-                    <span class="font-weight-bold"><?php echo  $data->lname; ?></span>
-                    <!-- <span class="text-black-50"><?php echo $data->email ?></span> -->
+                        </div>
+                    </div>
                 </div>
 
             </div>
-
-            <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-
-                    <div class="row mt-2">
-                        <div class="col-md-6">
-                            <label class="labels">First Name</label>
-                            <input type="text" class="form-control" name='fname' value="<?php echo $data->fname; ?>">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="labels">Last Name</label>
-                            <input type="text" class="form-control" value="<?php echo $data->lname; ?>" name='lname'>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <label class="labels">Phone Number</label>
-                            <input type="number" class="form-control" name='phone' value="<?php echo $data->phone; ?>">
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="labels">Age</label>
-                            <input type="number" class="form-control" name='age' value="<?php echo $data->age; ?>">
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="labels">Email</label>
-                            <input type="text" class="form-control" name='email' readonly value="<?php echo $data->email; ?>">
-                        </div>
-                    </div>
-
-                    <div class="form-check" style="padding-left: 0;">
-                        <div class="row">
-                            <label class="col-md-3 col-form-label">Gender:</label>
-                        </div>
-                    </div>
-
-                    <?php
-                    if ($data->gender == 1) {
-                        echo '
-                        <div class="form-check form-check-inline" style="padding-left: 1cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="1" checked>
-                        <label class="form-check-label">Male</label>
-                    </div>
-
-                    <div class="form-check form-check-inline" style="padding-left: 0.5cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="0">
-                        <label class="form-check-label">Female</label>
-                    </div>
-
-                    <div class="form-check form-check-inline" style="padding-left: 0.5cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="-1">
-                        <label class="form-check-label">Other</label>
-                    </div>
-                        ';
-                    } else if ($data->gender == 0) {
-                        echo '
-                        <div class="form-check form-check-inline" style="padding-left: 1cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="1" >
-                        <label class="form-check-label">Male</label>
-                    </div>
-
-                    <div class="form-check form-check-inline" style="padding-left: 0.5cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="0" checked>
-                        <label class="form-check-label">Female</label>
-                    </div>
-
-                    <div class="form-check form-check-inline" style="padding-left: 0.5cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="-1">
-                        <label class="form-check-label">Other</label>
-                    </div>
-                        ';
-                    } else {
-                        echo '
-                        <div class="form-check form-check-inline" style="padding-left: 1cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="1" >
-                        <label class="form-check-label">Male</label>
-                    </div>
-
-                    <div class="form-check form-check-inline" style="padding-left: 0.5cm;">
-                        <input class="form-check-input" type="radio" name="gender" value="0" >
-                        <label class="form-check-label">Female</label>
-                    </div>
-
-                    <div class="form-check form-check-inline" style="padding-left: 0.5cm;">
-                        <input class="form-check-input" type="radio" name="gender" checked value="-1">
-                        <label class="form-check-label">Other</label>
-                    </div>
-                        ';
-                    }
-
-                    ?>
-                    <div><span>Choose file to upload</span></div>
-                    <div class="row mt-4">
-                        <input type="file" name="fileToUpload" id="fileToUpload" value="<?php $data->profile_photo; ?>">
-                    </div>
-                    <div class="row mt-3">
-                        <div class="mt-5 text-center">
-                            <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
         </div>
-
-    </form>
-
-</div>
+    </div>
+    <!-- footer -->
 
 </div>
 
-
-
-<?php include_once("/xampp/htdocs/E_commerce/views/main/footer.php"); ?>
+<?php require_once __DIR__ . '/../footer.php';
