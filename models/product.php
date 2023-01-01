@@ -14,10 +14,11 @@ class Product
     public $inStock;
     public $type;
     public $shop_id;
+    public $dateAdd;
 
     // name,oldPrice,newPrice,sold,origin,saleOff
 
-    public function __construct($id, $name, $oldPrice, $newPrice, $sold, $origin, $saleOff, $rating, $reviews, $inStock, $type, $shop_id)
+    public function __construct($id, $name, $oldPrice, $newPrice, $sold, $origin, $saleOff, $rating, $reviews, $inStock, $type, $shop_id, $dateAdd)
     {
         $this->id = $id;
         $this->name = $name;
@@ -31,6 +32,7 @@ class Product
         $this->inStock = $inStock;
         $this->type = $type;
         $this->shop_id = $shop_id;
+        $this->dateAdd = $dateAdd;
     }
 
 
@@ -52,7 +54,9 @@ class Product
                 @$product['reviews'],
                 @$product['inStock'],
                 @$product['type'],
-                @$product['shop_id']
+                @$product['shop_id'],
+                @$product['dateAdd']
+
 
             );
         }
@@ -76,7 +80,8 @@ class Product
             $result['reviews'],
             $result['inStock'],
             $result['type'],
-            $result['shop_id']
+            $result['shop_id'],
+            $result['dateAdd']
 
 
         );

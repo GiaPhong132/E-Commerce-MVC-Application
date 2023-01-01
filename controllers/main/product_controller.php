@@ -155,10 +155,24 @@ class ProductController  extends BaseController
             $currentDate  = date('Y-m-d h:i:s');
             $query = "insert into corder (email, product_id, amount, state, time) values ('$email', $value, $amount, 'Đang vận chuyển', '$currentDate');";
             mysqli_query($conn, $query);
-        }
 
-        // $productCheck = substr($productCheck, 0, strlen($productCheck) - 7);
-        // $productCheck .= ');';
-        // $result = mysqli_query($conn, $productCheck);
+            $query = "delete from cart where email='$email' and product_id=$value;";
+            mysqli_query($conn, $query);
+        }
+    }
+
+    public function getLatest()
+    {
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+        $getQuery = "SELECT * FROM product limit 20";
+        $result = mysqli_query($conn, $getQuery);
+        $data = array('result' => $result);
+        $this->render('index', $data);
     }
 }

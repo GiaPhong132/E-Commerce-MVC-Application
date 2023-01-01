@@ -51,9 +51,11 @@ require_once(__DIR__ . "/../navbar.php");
                                         <div class="home-filter hide-on-mobile-tablet">
                                             <div class="home-filter-control">
                                                 <p class="home-filter-title">Sắp xếp theo</p>
-                                                <button class="btn btn--primary home-filter-btn">Phổ biến</button>
-                                                <button class="btn home-filter-btn">Mới nhất</button>
-                                                <button class="btn home-filter-btn">Bán chạy</button>
+                                                <form action="index.php?page=main&controller=product&action=getLatest">
+                                                    <button class="btn btn--primary home-filter-btn">Phổ biến</button>
+                                                    <button class="btn home-filter-btn">Mới nhất</button>
+                                                    <button class="btn home-filter-btn">Bán chạy</button>
+                                                </form>
                                                 <div class="btn home-filter-sort">
                                                     <p class="home-filter-sort-btn">Giá</p>
                                                     <i class="fas fa-sort-amount-down-alt"></i>
