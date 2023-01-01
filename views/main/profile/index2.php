@@ -150,7 +150,7 @@ require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
                     ?>
                     <div><span>Choose file to upload</span></div>
                     <div class="row mt-4">
-                        <input type="file" name="fileToUpload" id="fileToUpload" value="<?php $data->profile_photo; ?>">
+                        <input type="file" name="" id="fileToUpload" value="<?php $data->profile_photo; ?>">
                     </div>
                     <div class="row mt-3">
                         <div class="mt-5 text-center">

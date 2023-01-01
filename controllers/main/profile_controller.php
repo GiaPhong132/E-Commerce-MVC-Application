@@ -24,7 +24,8 @@ class ProfileController extends BaseController
         $lname = $_POST['lname'];
         $phone = $_POST['phone'];
         $gender = $_POST['gender'];
-        $age = $_POST['age'];
+        // $age = $_POST['age'];
+        $birthday = $_POST['birthday'];
 
         $data = User::get($email);
 
@@ -57,16 +58,16 @@ class ProfileController extends BaseController
         $file_pointer = $user->profile_photo;
 
         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-
+        // echo "Hello";
         if (file_exists($target_file)) {
-            User::update($email, $target_file, $fname, $lname, $gender, $age, $phone);
+            User::update($email, $target_file, $fname, $lname, $gender, $phone, $birthday);
             unlink($file_pointer);
-            header('Location: index.php?page=main&controller=layouts&action=index');
+            header('Location: index.php?page=main&controller=profile&action=index');
         }
         // Update
         else {
-            User::update($email, $data->profile_photo, $fname, $lname, $gender, $age, $phone);
-            header('Location: index.php?page=main&controller=layouts&action=index');
+            User::update($email, $data->profile_photo, $fname, $lname, $gender, $phone, $birthday);
+            header('Location: index.php?page=main&controller=profile&action=index');
         }
     }
 }

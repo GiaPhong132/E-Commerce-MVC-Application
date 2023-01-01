@@ -7,7 +7,6 @@ class User
     public $fname;
     public $lname;
     public $gender;
-    public $age;
     public $phone;
     public $createAt;
     public $updateAt;
@@ -15,14 +14,13 @@ class User
     public $birthday;
     public $password;
 
-    public function __construct($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $createAt, $updateAt, $address, $birthday, $password)
+    public function __construct($email, $profile_photo, $fname, $lname, $gender, $phone, $createAt, $updateAt, $address, $birthday, $password)
     {
         $this->email = $email;
         $this->profile_photo = $profile_photo;
         $this->fname = $fname;
         $this->lname = $lname;
         $this->gender = $gender;
-        $this->age = $age;
         $this->phone = $phone;
         $this->createAt = $createAt;
         $this->updateAt = $updateAt;
@@ -46,7 +44,6 @@ class User
                 $user['fname'],
                 $user['lname'],
                 $user['gender'],
-                $user['age'],
                 $user['phone'],
                 $user['createAt'],
                 $user['updateAt'],
@@ -61,21 +58,20 @@ class User
     static function get($email)
     {
         $db = DB::getInstance();
-        $req = $db->query(
-            "
-            SELECT email, profile_photo, fname, lname, gender, age, phone, createAt, updateAt,address,birthday
+        $query = "
+            SELECT email, profile_photo, fname, lname, gender, phone, createAt, updateAt,address,birthday
             FROM user
             WHERE email = '$email'
-            ;"
-        );
+            ;";
+        $req = $db->query($query);
         $result = $req->fetch_assoc();
+
         $user = new User(
             $result['email'],
             $result['profile_photo'],
             $result['fname'],
             $result['lname'],
             $result['gender'],
-            $result['age'],
             $result['phone'],
             $result['createAt'],
             $result['updateAt'],
@@ -86,7 +82,7 @@ class User
         return $user;
     }
 
-    static function insert($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $password)
+    static function insert($email, $profile_photo, $fname, $lname, $gender, $phone, $password)
     {
         $password = password_hash($password, PASSWORD_DEFAULT);
         $db = DB::getInstance();
@@ -94,8 +90,8 @@ class User
 
         $req = $db->query(
             "
-            INSERT INTO USER (email, profile_photo, fname, lname, gender, age, phone, createAt, updateAt, password)
-            VALUES ('$email', '$profile_photo', '$fname', '$lname', $gender, $age, '$phone', NOW(), NOW(), '$password')
+            INSERT INTO USER (email, profile_photo, fname, lname, gender,  phone, createAt, updateAt, password)
+            VALUES ('$email', '$profile_photo', '$fname', '$lname', $gender, '$phone', NOW(), NOW(), '$password')
             ;"
         );
 
@@ -110,16 +106,15 @@ class User
     }
 
 
-    static function update($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $birthday)
+    static function update($email, $profile_photo, $fname, $lname, $gender, $phone, $birthday)
     {
         $db = DB::getInstance();
-        $req = $db->query(
-            "
+        $query =    "
             UPDATE user
-            SET birthday=$birthday ,profile_photo = '$profile_photo', fname = '$fname', lname = '$lname', gender= '$gender', age ='$age', phone = '$phone', updateAt = NOW()
+            SET birthday='$birthday' ,profile_photo = '$profile_photo', fname = '$fname', lname = '$lname', gender= '$gender', phone = '$phone', updateAt = NOW()
             WHERE email = '$email'
-            ;"
-        );
+            ;";
+        $req = $db->query($query);
         return $req;
     }
 

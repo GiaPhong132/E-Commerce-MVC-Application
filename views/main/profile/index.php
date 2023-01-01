@@ -65,8 +65,8 @@
                                 <div class="container-profile-body-content container-profile-body-content--separate">
                                     <div class="container-profile-body-content-name">
                                         <div class="container-profile-body-content-name-label">Tên đăng nhập</div>
-                                        <div class="container-profile-body-content-name-label">Tên</div>
-                                        <div class="container-profile-body-content-name-label">Email</div>
+                                        <div class="container-profile-body-content-name-label">First Name</div>
+                                        <div class="container-profile-body-content-name-label">Last Name</div>
                                         <div class="container-profile-body-content-name-label">Số điện thoại</div>
                                         <div class="container-profile-body-content-name-label">Giới tính</div>
                                         <div class="container-profile-body-content-name-label">Ngày sinh</div>
@@ -74,13 +74,23 @@
 
                                     <form action="index.php?page=main&controller=profile&action=editInfo" enctype="multipart/form-data" method="POST">
                                         <div class="container-profile-body-content-detail">
-                                            <div class="container-profile-body-content-name-infor"><?php echo $data->email ?></div>
                                             <div class="container-profile-body-content-name-infor">
-                                                <input type="text" value="<?php echo $data->fname . ' ' . $data->lname ?>">
+                                                <input type="hidden" name="email" value="<?php echo $data->email ?>">
+
+                                                <?php echo $data->email ?>
+
                                             </div>
-                                            <div class="container-profile-body-content-name-infor"><?php echo $data->email ?> </div>
                                             <div class="container-profile-body-content-name-infor">
-                                                <input type="text" value="<?php echo $data->phone ?>">
+                                                <input type="text" name="fname" value="<?php echo $data->fname ?>">
+                                            </div>
+
+                                            <div class="container-profile-body-content-name-infor">
+                                                <input type="text" name="lname" value="<?php echo $data->lname ?>">
+                                            </div>
+
+
+                                            <div class="container-profile-body-content-name-infor">
+                                                <input type="text" name="phone" value="<?php echo $data->phone ?>">
                                             </div>
                                             <div class="container-profile-body-content-name-infor-sex">
                                                 <div class="container-profile-body-content-name-infor-sex-val">
@@ -88,30 +98,30 @@
                                                     $gender = $data->gender;
                                                     if ($gender == 1) {
                                                         echo '
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val" checked>
+                                                        <input type="radio" name="gender" value="1"  checked>
                                                         <div class="container-profile-body-content-name-infor-sex-name">Nam</div>
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <input type="radio" name="gender"  value="0" >
                                                         <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <input type="radio" name="gender"  value="-1" >
                                                         <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
                                                         ';
                                                     } elseif ($gender == 0) {
                                                         echo '
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <input type="radio" name="gender" value="1">
                                                         <div class="container-profile-body-content-name-infor-sex-name">Nam</div>
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val" checked>
+                                                        <input type="radio" name="gender" value="0" checked>
                                                         <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <input type="radio" name="gender" value="-1" >
                                                         <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
                                                         ';
                                                     } else {
                                                         echo '
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <input type="radio" name="gender" value="1" >
                                                         <div class="container-profile-body-content-name-infor-sex-name">Nam</div>
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val">
+                                                        <input type="radio" name="gender" value="0" >
                                                         <div class="container-profile-body-content-name-infor-sex-name">Nữ</div>
-                                                        <input type="radio" name="container-profile-body-content-name-infor-val" checked>
-                                                        <div class="container-profile-body-content-name-infor-sex-name">Khác</div>
+                                                        <input type="radio" name="gender" value="-1"  checked>
+                                                        <div class="container-profile-body-content-name-infor-sex-name" checked>Khác</div>
                                                         ';
                                                     }
                                                     ?>
@@ -137,17 +147,24 @@
                                                 // echo var_dump($date);
                                                 $dateUI = date_format($date, 'Y') . '-' . date_format($date, 'm') . '-' . date_format($date, 'd');
                                                 ?>
-                                                <input type="date" value="<?php echo $dateUI ?>" class="container-profile-body-content-name-infor-birthday-val">
+                                                <input type="date" name="birthday" value="<?php echo $dateUI ?>" class="container-profile-body-content-name-infor-birthday-val">
                                             </div>
                                         </div>
                                 </div>
-                                <input type="button" class="container-profile-button" value="Lưu">
+                                <input type="submit" class="container-profile-button" value="Lưu">
                             </div>
                             <div class="col l-2">
                                 <div class="container-profile-body-avt">
                                     <div class="container-profile-body-avt-in">
-                                        <img src="https://kiemtientuweb.com/ckfinder/userfiles/images/avatar-fb/avatar-fb-1.jpg" alt="" class="container-profile-body-avt-img">
-                                        <input type="button" class="container-profile-body-avt-choose-img-btn" value="Chọn ảnh">
+                                        <img src=" <?php echo $data->profile_photo ?>" alt="" class="container-profile-body-avt-img">
+                                        <!-- <input type="button" class="container-profile-body-avt-choose-img-btn" value="Chọn ảnh"> -->
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <input type="file" name="fileToUpload" id="fileToUpload" value="<?php $data->profile_photo; ?>">
                                         <div class="container-profile-body-avt-name-reg">
                                             <div class="container-profile-body-avt-name">Dung lượng file tối đa 1 MB</div>
                                             <div class="container-profile-body-avt-name">Định dạng: .JPEG, >PNG</div>
