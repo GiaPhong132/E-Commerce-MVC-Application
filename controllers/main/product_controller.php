@@ -134,28 +134,28 @@ class ProductController  extends BaseController
 
     public function pay()
     {
-        echo var_dump($_POST['key']);
-        // $conn = mysqli_connect('localhost', 'root', '123');
+        $conn = mysqli_connect('localhost', 'root', '123');
 
-        // if (!$conn) {
-        //     die("Connection failed" . mysqli_connect_error());
-        // } else {
-        //     mysqli_select_db($conn, 'E_commerce');
-        // }
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
 
-        // if (session_status() != PHP_SESSION_ACTIVE)
-        //     session_start();
-        // $email = $_SESSION['guest'];
-        // $productCheck = "select * from cart join product p on p.id = cart.product_id and email ='$email' and (id=";
+        if (session_status() != PHP_SESSION_ACTIVE)
+            session_start();
+        $email = $_SESSION['guest'];
 
-        // foreach (explode('&', file_get_contents('php://input')) as $keyValuePair) {
-        //     list($key, $value) = explode('=', $keyValuePair);
-        //     echo $value . ' ';
-        //     $productCheck .= $value . ' or id=';
-        //     // $query = "select * from cart join product p on p.id = cart.product_id and email ='$email' and id=$value";
-        //     // $req = mysqli_query($conn, $query);
-        //     // $result = $req->fetch_assoc();
-        // }
+        foreach (explode('&', file_get_contents('php://input')) as $keyValuePair) {
+            list($key, $value) = explode('=', $keyValuePair);
+            $query = "select amount from cart join product p on p.id = cart.product_id and email ='$email' and id=$value";
+            $req = mysqli_query($conn, $query);
+            $result = $req->fetch_assoc();
+            $amount = $result['amount'];
+            $currentDate  = date('Y-m-d h:i:s');
+            $query = "insert into corder (email, product_id, amount, state, time) values ('$email', $value, $amount, 'Đang vận chuyển', '$currentDate');";
+            mysqli_query($conn, $query);
+        }
 
         // $productCheck = substr($productCheck, 0, strlen($productCheck) - 7);
         // $productCheck .= ');';

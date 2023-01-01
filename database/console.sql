@@ -1,3 +1,3 @@
 use e_commerce;
 
-select * from cart join product p on p.id = cart.product_id and email ="giaphong132@gmail.com" and (id = 1);
+insert into corder (email, product_id, amount, state, time) values ('giaphong132@gmail.com', 1, 2, 'Đang vận chuyển', '2023-01-01 12:07:05');
