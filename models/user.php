@@ -11,9 +11,10 @@ class User
     public $phone;
     public $createAt;
     public $updateAt;
+    public $address;
     public $password;
 
-    public function __construct($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $createAt, $updateAt, $password)
+    public function __construct($email, $profile_photo, $fname, $lname, $gender, $age, $phone, $createAt, $updateAt, $address, $password)
     {
         $this->email = $email;
         $this->profile_photo = $profile_photo;
@@ -24,6 +25,7 @@ class User
         $this->phone = $phone;
         $this->createAt = $createAt;
         $this->updateAt = $updateAt;
+        $this->address = $address;
         $this->password = $password;
     }
 
@@ -46,6 +48,7 @@ class User
                 $user['phone'],
                 $user['createAt'],
                 $user['updateAt'],
+                $user['address'],
                 '' // Do not return password
             );
         }
@@ -57,7 +60,7 @@ class User
         $db = DB::getInstance();
         $req = $db->query(
             "
-            SELECT email, profile_photo, fname, lname, gender, age, phone, createAt, updateAt
+            SELECT email, profile_photo, fname, lname, gender, age, phone, createAt, updateAt,address
             FROM user
             WHERE email = '$email'
             ;"
@@ -73,6 +76,7 @@ class User
             $result['phone'],
             $result['createAt'],
             $result['updateAt'],
+            $result['address'],
             '' // Do not return password
         );
         return $user;

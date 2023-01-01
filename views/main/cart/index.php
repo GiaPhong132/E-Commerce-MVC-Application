@@ -91,7 +91,7 @@ require_once __DIR__ . '/../navbar.php';
                                                 <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
                                                 <div class="product-cart-footer-price-sum">' . $totalPrice . '</div>
                                             </div>
-                                            <a href="#" class="btn buy-btn"> Mua hàng</a>
+                                            <a href="index.php?page=main&controller=product&action=getPay" class="btn buy-btn"> Mua hàng</a>
                                         </div>
 
                                     </div>

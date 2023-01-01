@@ -12,17 +12,18 @@ CREATE TABLE `user` (
   `phone` varchar(10) DEFAULT NULL,
   `createAt` datetime DEFAULT NULL,
   `updateAt` datetime DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL,
+  address varchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`) VALUES
-('admin@gmail.com', 'public/images/user/default.png', 'admin', 'admin', 1, 20, '123123', '2022-06-16 21:46:51', '2022-06-16 21:46:51', '$2y$10$GTSVSDI2TFhxJnNFrS8tj.2GKKkbAfiZtvYbRxUvIP/Mp6dtcwC8u');
+INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`, address) VALUES
+('admin@gmail.com', 'public/images/user/default.png', 'admin', 'admin', 1, 20, '0497144026', '2022-06-16 21:46:51', '2022-06-16 21:46:51', '$2y$10$GTSVSDI2TFhxJnNFrS8tj.2GKKkbAfiZtvYbRxUvIP/Mp6dtcwC8u', 'Novaland The Sun Avenue, Tầng 1, Tháp 1, Tòa nhà Số 28, Đường Mai Chí Thọ, Thủ Đức, Thành phố Hồ Chí Minh');
 
-INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`) VALUES
-('giaphong132@gmail.com', 'public/images/user/default.png', 'Bùi Đoàn', 'Phong', 1, 20, '1', '2022-06-16 20:48:56', '2022-06-17 17:42:04', '$2y$10$NtrSaLnNsR29ouPqCuQF5ukGtuttVs70TYntJrdkyqWEC0YM417H.');
-INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`) VALUES
-('phong.bui132@hcmut.edu.vn', 'public/img/user/default.png', 'Phong', 'Phong', 1, 20, '0704701412', '2022-06-16 20:49:12', '2022-06-16 20:49:12', '$2y$10$CMNaGhePLvkl.U4DuIMRfesAGCn3uJohnSaBMyi1EK1pVSGk7OcQi');
+INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`, address) VALUES
+('giaphong132@gmail.com', 'public/images/user/default.png', 'Bùi Đoàn', 'Phong', 1, 20, '0339344028', '2022-06-16 20:48:56', '2022-06-17 17:42:04', '$2y$10$NtrSaLnNsR29ouPqCuQF5ukGtuttVs70TYntJrdkyqWEC0YM417H.' ,'Ký túc xá khu A, Phường Linh Trung, Thành Phố Thủ Đức, TP. Hồ Chí Minh');
+INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `age`, `phone`, `createAt`, `updateAt`, `password`, address) VALUES
+('phong.bui132@hcmut.edu.vn', 'public/img/user/default.png', 'Phong', 'Phong', 1, 20, '0704701412', '2022-06-16 20:49:12', '2022-06-16 20:49:12', '$2y$10$CMNaGhePLvkl.U4DuIMRfesAGCn3uJohnSaBMyi1EK1pVSGk7OcQi','268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh');
 
 ALTER TABLE `user`
   ADD PRIMARY KEY (`email`);

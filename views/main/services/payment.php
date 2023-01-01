@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/../navbar.php';
+<?php
+if (!isset($_SESSION['guest']))
+    header('Location: index.php?page=main&controller=login&action=index');
+require_once __DIR__ . '/../navbar.php';
 ?>
 
 <div class="app">
@@ -75,8 +78,8 @@
                                 <div class="payment-address-site-label-2">Địa Chỉ Nhận Hàng</div>
                             </div>
                             <div class="payment-address-site-infor">
-                                <div class="payment-address-site-infor-1">Nguyễn Đình Thi (+84) 3995739575</div>
-                                <div class="payment-address-site-infor-2">Kí túc xá khu A, Phường Linh Trung, Thành Phố Thủ Đức, TP. Hồ Chí Minh</div>
+                                <div class="payment-address-site-infor-1"><?php echo $data->fname . ' '  . $data->lname . ' ' . $data->phone ?> </div>
+                                <div class="payment-address-site-infor-2"><?php echo $data->address ?></div>
                                 <div class="payment-address-site-infor-3">Mặc định</div>
                                 <div class="payment-address-site-infor-4">Thay đổi</div>
                             </div>
