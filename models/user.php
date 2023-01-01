@@ -81,7 +81,6 @@ class User
         );
         return $user;
     }
-
     static function insert($email, $profile_photo, $fname, $lname, $gender, $phone, $password)
     {
         $password = password_hash($password, PASSWORD_DEFAULT);

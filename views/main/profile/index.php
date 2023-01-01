@@ -27,7 +27,7 @@
                             </div>
                             <div class="container-profile-list-name">
                                 <div class="container-profile-list-name-3">
-                                    <a href="address.html" class="container-profile-list-name-5">
+                                    <a href="index.php?page=main&controller=profile&action=getAddress" class="container-profile-list-name-5">
                                         <div class="container-profile-list-name-4">Địa chỉ</div>
                                     </a>
                                 </div>

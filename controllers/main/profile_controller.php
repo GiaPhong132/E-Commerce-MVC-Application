@@ -70,4 +70,30 @@ class ProfileController extends BaseController
             header('Location: index.php?page=main&controller=profile&action=index');
         }
     }
+
+    public function getAddress()
+    {
+        $this->render('address');
+    }
+
+    public function updateAddress()
+    {
+        session_start();
+        $email = $_SESSION['guest'];
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
+
+        $query = "Update user set address='$address', phone='$phone' where email='$email';";
+        $req = mysqli_query($conn, $query);
+
+        $this->render('address');
+    }
 }

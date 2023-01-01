@@ -21,7 +21,7 @@ $controllers = array(
     'about' => ['index'],
     'services' => ['index'],
     'register' => ['index', 'submit', 'editInfo'],
-    'profile' => ['index', 'editInfo'],
+    'profile' => ['index', 'editInfo', 'getAddress', 'updateAddress'],
 
 
 
