@@ -41,44 +41,46 @@ require_once __DIR__ . '/../navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <?php
-                        $totalPrice = 0;
-                        $totalAmount = 0;
-                        foreach ($result as $row) {
-                            $totalPrice += $row['newPrice'] * $row['amount'];
-                            $totalAmount += $row['amount'];
-                            echo '
-                                                <div class="product-cart-container-box-p">
-                                            <div class="product-cart-container-turtorial">
-                                            <div class="product-cart-turtorial-list-p">
-                                                <div class="product-cart-container-turtorial-checkbox">
-                                                    <i class="fa-solid fa-check product-cart-icon-btn"></i>
-                                                </div>
-                                                <div class="product-cart-list-name product-cart-list-name-p">
-                                                    <img src="/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif" alt="" class="product-cart-img">
-                                                    ' . $row['name'] . '
-                                                </div>
-                                                <div class="product-cart-list-name">
-                                                    <div class="product-cart-list-price">đ</div>
-                                                    ' . number_format($row['newPrice'], 0, '', '.') . '
-                                                </div>
-                                                <div class="product-cart-list-name product-cart-list-name-quantity">' . $row['amount'] . '</div>
-                                                <div class="product-cart-list-name">
-                                                    <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                                    <div class="product-cart-list-price-sum-num">' . number_format($row['newPrice'] * $row['amount'], 0, '', '.') . '</div>
-                                                </div>
-                                                <div class="product-cart-list-name">
-                                                    <div class="product-cart-list-act"><a href="index.php?page=main&controller=cart&action=delete&idDel=' . $row['id'] . '">Xóa</a></div>
-                                                </div>
+                        <form action="index.php?page=main&controller=product&action=getPay" method="POST">
 
+
+
+                            <?php
+                            $totalPrice = 0;
+                            $totalAmount = 0;
+                            foreach ($result as $row) {
+                                $totalPrice += $row['newPrice'] * $row['amount'];
+                                $totalAmount += $row['amount'];
+                                echo '
+                                                    <div class="product-cart-container-box-p">
+                                                <div class="product-cart-container-turtorial">
+                                                <div class="product-cart-turtorial-list-p">
+                                                  <input type="checkbox" name="key" value="' . $row['id'] . '" >&nbsp&nbsp&nbsp&nbsp
+                                                    <div class="product-cart-list-name product-cart-list-name-p">
+                                                        <img src="/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif" alt="" class="product-cart-img">
+                                                        ' . $row['name'] . '
+                                                    </div>
+                                                    <div class="product-cart-list-name">
+                                                        <div class="product-cart-list-price">đ</div>
+                                                        ' . number_format($row['newPrice'], 0, '', '.') . '
+                                                    </div>
+                                                    <div class="product-cart-list-name product-cart-list-name-quantity">' . $row['amount'] . '</div>
+                                                    <div class="product-cart-list-name">
+                                                        <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
+                                                        <div class="product-cart-list-price-sum-num">' . number_format($row['newPrice'] * $row['amount'], 0, '', '.') . '</div>
+                                                    </div>
+                                                    <div class="product-cart-list-name">
+                                                        <div class="product-cart-list-act"><a href="index.php?page=main&controller=cart&action=delete&idDel=' . $row['id'] . '">Xóa</a></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                            ';
+                            }
+                            ?>
 
-
-                        ';
-                        }
-                        echo '
+                            <?php
+                            echo '
                                 <div class="product-cart-container-box-footer">
                                     <div class="product-cart-container-turtorial">
                                         <div class="product-cart-turtorial-list-footer">
@@ -89,16 +91,17 @@ require_once __DIR__ . '/../navbar.php';
                                             <div class="product-cart-footer-name-price-sum">Tổng Thanh Toán (' . $totalAmount . ' sản phẩm)</div>
                                             <div class="product-cart-footer-price">
                                                 <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                                <div class="product-cart-footer-price-sum">' . $totalPrice . '</div>
+                                                <div class="product-cart-footer-price-sum">' . number_format($totalPrice, 0, '', '.')  . '</div>
                                             </div>
-                                            <a href="index.php?page=main&controller=product&action=getPay" class="btn buy-btn"> Mua hàng</a>
+                                            <button class="btn buy-btn" type="submit">Mua hàng</button>
                                         </div>
 
                                     </div>
                                 </div>';
 
-                        ?>
+                            ?>
 
+                        </form>
                     </div>
                 </div>
                 <div class="col l-1"></div>

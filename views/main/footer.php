@@ -108,10 +108,10 @@
 </footer>
 </div>
 <!-- modal -->
-<div class="modal">
+<!-- <div class="modal">
     <div class="modal__body">
         <!-- authen signin-->
-        <div class="auth-form">
+<!-- <div class="auth-form">
             <div class="auth-form__container">
                 <div class="auth-form__header">
                     <h3 class="auth-form__heading">Đăng Ký</h3>
@@ -154,9 +154,9 @@
                     </p>
                 </a>
             </div>
-        </div>
-    </div>
+        </div> -->
 </div>
+</div> -->
 
 <!-- script js -->
 <!-- <script src="./assets/js/product.js"></script> -->

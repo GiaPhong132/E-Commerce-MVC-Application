@@ -3,7 +3,6 @@ if (!isset($_SESSION['guest']))
     header('Location: index.php?page=main&controller=login&action=index');
 require_once __DIR__ . '/../navbar.php';
 ?>
-
 <div class="app">
     <!--Header-->
     <header class="header-login">
@@ -15,7 +14,7 @@ require_once __DIR__ . '/../navbar.php';
                             <!-- <img src="/e_commerce/public/assets/img/logo/logo-full-orange.png" class="header__logo-img-login"> -->
                         </a>
                     </div>
-                    <center><span class="header__label-login">Thanh Toán</span></center>
+                    <span class="header__label-login">Thanh Toán</span>
                 </div>
                 <!-- <a href="#" class="header__help">Bạn cần giúp đỡ?</a> -->
             </div>
@@ -100,9 +99,8 @@ require_once __DIR__ . '/../navbar.php';
                         </div>
 
                         <?php
-                        $total = 0;
-                        foreach ($cart as $row) {
-                            $total += $row['newPrice']  * $row['amount'];
+
+                        foreach ($productCheck as $row) {
                             echo '
                                         <div class="payment-product-site-container">
                                             <div class="payment-product-site-container__name1">
@@ -130,8 +128,6 @@ require_once __DIR__ . '/../navbar.php';
 
                         ';
                         }
-
-
                         ?>
 
 
@@ -145,7 +141,7 @@ require_once __DIR__ . '/../navbar.php';
                             <div class="payment-product-site-footer-price">
                                 <div class="payment-product-site-footer-price-num">
                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num"><?php echo number_format($total, 0, '', '.'); ?></div>
+                                    <div class="product-cart-list-price-sum-num"><?php echo number_format($totalPrice, 0, '', '.'); ?></div>
                                 </div>
                                 <div class="payment-product-site-footer-price-num">
                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
@@ -153,23 +149,24 @@ require_once __DIR__ . '/../navbar.php';
                                 </div>
                                 <div class="payment-product-site-footer-price-num">
                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num"><?php echo  number_format($total, 0, '', '.'); ?></div>
+                                    <div class="product-cart-list-price-sum-num"><?php echo  number_format($totalPrice, 0, '', '.'); ?></div>
                                 </div>
                             </div>
-                            <div class="btn payment-btn">Đặt hàng</div>
+                            <a href="index.php?page=main&controller=product&action=pay">
+                                <div class="btn payment-btn">Đặt hàng</div>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="col l-12">
-                    <div class="payment-product">
+                    <div class="col l-12">
+                        <div class="payment-product">
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Footer -->
+
     </div>
-    <!-- Footer -->
 
-</div>
-
-<?php require_once __DIR__ . '/../footer.php';
+    <?php require_once __DIR__ . '/../footer.php';

@@ -101,6 +101,7 @@ class ProductController  extends BaseController
 
     public function getPay()
     {
+        $totalPrice = 0;
         $conn = mysqli_connect('localhost', 'root', '123');
 
         if (!$conn) {
@@ -112,11 +113,38 @@ class ProductController  extends BaseController
         if (session_status() != PHP_SESSION_ACTIVE)
             session_start();
         $email = $_SESSION['guest'];
+        $productCheck = "select * from cart join product p on p.id = cart.product_id and email ='$email' and (id=";
 
-        $query = "select * from cart join product p on p.id = cart.product_id and email ='$email';";
-        $result = mysqli_query($conn, $query);
+        foreach (explode('&', file_get_contents('php://input')) as $keyValuePair) {
+            list($key, $value) = explode('=', $keyValuePair);
+            $productCheck .= $value . ' or id=';
+            $query = "select * from cart join product p on p.id = cart.product_id and email ='$email' and id=$value";
+            $req = mysqli_query($conn, $query);
+            $result = $req->fetch_assoc();
+            $totalPrice += $result['amount'] * $result['newPrice'];
+        }
+        $productCheck = substr($productCheck, 0, strlen($productCheck) - 7);
+        $productCheck .= ');';
+        $result = mysqli_query($conn, $productCheck);
 
-        $data = array('cart' => $result);
+
+        $data = array('productCheck' => $result, 'totalPrice' => $totalPrice);
         $this->render('payment', $data);
+    }
+
+    public function pay()
+    {
+        foreach ($_POST['key'] as $key) echo $key . ' ';
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+
+        if (session_status() != PHP_SESSION_ACTIVE)
+            session_start();
+        $email = $_SESSION['guest'];
     }
 }
