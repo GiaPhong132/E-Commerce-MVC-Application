@@ -51,26 +51,31 @@ require_once(__DIR__ . "/../navbar.php");
                                         <div class="home-filter hide-on-mobile-tablet">
                                             <div class="home-filter-control">
                                                 <p class="home-filter-title">Sắp xếp theo</p>
-                                                <form action="index.php?page=main&controller=product&action=getLatest">
-                                                    <button class="btn btn--primary home-filter-btn">Phổ biến</button>
-                                                    <button class="btn home-filter-btn">Mới nhất</button>
-                                                    <button class="btn home-filter-btn">Bán chạy</button>
+                                                <form action="index.php?page=main&controller=product&action=getFilter" method="POST">
+                                                    <button type="submit" name="getPopular" class="btn btn--primary home-filter-btn">Phổ biến</button>
+                                                    <button type="submit" name="getLatest" class="btn home-filter-btn">Mới nhất</button>
+                                                    <button type="submit" name="getMost" class="btn home-filter-btn">Bán chạy</button>
                                                 </form>
                                                 <div class="btn home-filter-sort">
+
                                                     <p class="home-filter-sort-btn">Giá</p>
-                                                    <i class="fas fa-sort-amount-down-alt"></i>
+
                                                     <ul class="home-filter-sort-list">
-                                                        <li>
+
+                                                            <form action="index.php?page=main&controller=product&action=getFilter" method="POST">
+                                                              <li>
                                                             <a href="#" class="home-filter-sort-item-link">
-                                                                Giảm dần
-                                                                <i class="fas fa-sort-amount-down-alt"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="home-filter-sort-item-link">
-                                                                Tăng dần
-                                                                <i class="fas fa-sort-amount-up-alt"></i>
-                                                            </a>
+                                                                    <button type="submit" name="descending" class="home-filter-sort-item-link" style="background:none; border:none">GIẢM DẦN</button>
+                                                                    <i class="fas fa-sort-amount-down-alt"></i>
+                                                                  </a>
+                                                                </li>
+                                                                <li>
+                                                                <a href="#" class="home-filter-sort-item-link">
+                                                                   <button type="submit" name="ascending" class="home-filter-sort-item-link" style="background:none; border:none">TĂNG DẦN</button>
+                                                                    <i class="fas fa-sort-amount-up-alt"></i>
+                                                                </a>
+
+                                                            </form>
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -161,7 +161,7 @@ class ProductController  extends BaseController
         }
     }
 
-    public function getLatest()
+    public function getFilter()
     {
         $conn = mysqli_connect('localhost', 'root', '123');
 
@@ -170,9 +170,36 @@ class ProductController  extends BaseController
         } else {
             mysqli_select_db($conn, 'E_commerce');
         }
-        $getQuery = "SELECT * FROM product limit 20";
-        $result = mysqli_query($conn, $getQuery);
-        $data = array('result' => $result);
-        $this->render('index', $data);
+        if (isset($_POST['getLatest'])) {
+            $getQuery = "SELECT * FROM product order by dateAdd limit 20";
+            $result = mysqli_query($conn, $getQuery);
+            $signal = "getLatest";
+            $data = array('result' => $result, 'signal' => $signal);
+            $this->render('index', $data);
+        } elseif (isset($_POST['getPopular'])) {
+            $getQuery = "SELECT * FROM product order by reviews limit 20";
+            $result = mysqli_query($conn, $getQuery);
+            $signal = "getPopular";
+            $data = array('result' => $result, 'signal' => $signal);
+            $this->render('index', $data);
+        } elseif (isset($_POST['getMost'])) {
+            $getQuery = "SELECT * FROM product order by sold, reviews limit 20";
+            $result = mysqli_query($conn, $getQuery);
+            $signal = "getMost";
+            $data = array('result' => $result, 'signal' => $signal);
+            $this->render('index', $data);
+        } elseif (isset($_POST['descending'])) {
+            $getQuery = "SELECT * FROM product order by newPrice desc limit 20";
+            $result = mysqli_query($conn, $getQuery);
+            $signal = "descending";
+            $data = array('result' => $result, 'signal' => $signal);
+            $this->render('index', $data);
+        } elseif (isset($_POST['ascending'])) {
+            $getQuery = "SELECT * FROM product order by newPrice asc limit 20";
+            $result = mysqli_query($conn, $getQuery);
+            $signal = "ascending";
+            $data = array('result' => $result, 'signal' => $signal);
+            $this->render('index', $data);
+        }
     }
 }
