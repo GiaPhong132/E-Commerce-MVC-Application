@@ -111,8 +111,8 @@ class ProductController  extends BaseController
         $product = Product::get($key);
         $message = "Sản phẩm đã được thêm vào Giỏ hàng";
         $key = $_GET['productKey'];
-        // $product = Product::get($key);
-        $shop  = Shop::get($key);
+        $product = Product::get($key);
+        $shop  = Shop::get($product->shop_id);
         $data = array('product' => $product, 'message' => $message, 'shop' => $shop);
         $this->render('detail', $data);
     }
