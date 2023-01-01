@@ -12,12 +12,12 @@ require_once __DIR__ . '/../navbar.php';
                 <div class="header__contain-login">
                     <div class="header__logo">
                         <a href="./index.html" class="header__logo-link">
-                            <img src="./assets/img/logo/logo-full-orange.png" class="header__logo-img-login">
+                            <!-- <img src="/e_commerce/public/assets/img/logo/logo-full-orange.png" class="header__logo-img-login"> -->
                         </a>
                     </div>
-                    <span class="header__label-login">Thanh Toán</span>
+                    <center><span class="header__label-login">Thanh Toán</span></center>
                 </div>
-                <a href="#" class="header__help">Bạn cần giúp đỡ?</a>
+                <!-- <a href="#" class="header__help">Bạn cần giúp đỡ?</a> -->
             </div>
         </div>
     </header>
