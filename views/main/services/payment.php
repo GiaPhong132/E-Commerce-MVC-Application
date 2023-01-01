@@ -98,75 +98,76 @@ require_once __DIR__ . '/../navbar.php';
 
                         </div>
 
-                        <?php
-
-                        foreach ($productCheck as $row) {
-                            echo '
-                                        <div class="payment-product-site-container">
-                                            <div class="payment-product-site-container__name1">
-                                                <img src="/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif" alt="" class="payment-product-site-container__img">
-                                                <div class="payment-product-site-container__name3">
-                                                    <div class="payment-product-site-container__name">' . $row['name'] . '</div>
-                                                    <div class="payment-product-site-container__name-2">Loại: Midnight</div>
-
+                        <form action="index.php?page=main&controller=product&action=pay" method="POST">
+                            <?php
+                            foreach ($productCheck as $row) {
+                                echo '
+                                            <div class="payment-product-site-container">
+                                                <div class="payment-product-site-container__name1">
+                                                    <img src="/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif" alt="" class="payment-product-site-container__img">
+                                                    <div class="payment-product-site-container__name3">
+                                                     <input type="hidden" name="key" value="' . $row['id'] . '" >
+                                                        <div class="payment-product-site-container__name">' . $row['name'] . '</div>
+                                                        <div class="payment-product-site-container__name-2">Loại: Midnight</div>
+                                                    </div>
+                                                </div>
+                                                <div class="payment-product-site-container__name2">
+                                                    <div class="payment-product-site-container__price">
+                                                        <div class="product-cart-list-price">đ</div>
+                                                        ' .  number_format($row['newPrice'], 0, '', '.') . '
+                                                    </div>
+                                                    <div class="payment-product-site-container__quantity">
+                                                        ' . $row['amount'] . '
+                                                    </div>
+                                                    <div class="payment-product-site-container__sum">
+                                                        <div class="product-cart-list-price">đ</div>
+                                                        ' . number_format($row['newPrice'] * $row['amount'], 0, '', '.') . '
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="payment-product-site-container__name2">
-                                                <div class="payment-product-site-container__price">
-                                                    <div class="product-cart-list-price">đ</div>
-                                                    ' .  number_format($row['newPrice'], 0, '', '.') . '
-                                                </div>
-                                                <div class="payment-product-site-container__quantity">
-                                                    ' . $row['amount'] . '
-                                                </div>
-                                                <div class="payment-product-site-container__sum">
-                                                    <div class="product-cart-list-price">đ</div>
-                                                    ' . number_format($row['newPrice'] * $row['amount'], 0, '', '.') . '
-                                                </div>
-                                            </div>
-                                        </div>
-
-                        ';
-                        }
-                        ?>
+                            ';
+                            }
+                            ?>
 
 
 
-                        <div class="payment-product-site-footer">
-                            <div class="payment-product-site-footer-category">
-                                <div class="payment-product-site-footer-category-name">Tổng tiền sản phẩm:</div>
-                                <div class="payment-product-site-footer-category-name">Phí vận chuyển:</div>
-                                <div class="payment-product-site-footer-category-name">Tổng thanh toán:</div>
-                            </div>
-                            <div class="payment-product-site-footer-price">
-                                <div class="payment-product-site-footer-price-num">
-                                    <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num"><?php echo number_format($totalPrice, 0, '', '.'); ?></div>
+                            <div class="payment-product-site-footer">
+                                <div class="payment-product-site-footer-category">
+                                    <div class="payment-product-site-footer-category-name">Tổng tiền sản phẩm:</div>
+                                    <div class="payment-product-site-footer-category-name">Phí vận chuyển:</div>
+                                    <div class="payment-product-site-footer-category-name">Tổng thanh toán:</div>
                                 </div>
-                                <div class="payment-product-site-footer-price-num">
-                                    <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num">20.000</div>
+                                <div class="payment-product-site-footer-price">
+                                    <div class="payment-product-site-footer-price-num">
+                                        <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
+                                        <div class="product-cart-list-price-sum-num"><?php echo number_format($totalPrice, 0, '', '.'); ?></div>
+                                    </div>
+                                    <div class="payment-product-site-footer-price-num">
+                                        <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
+                                        <div class="product-cart-list-price-sum-num">20.000</div>
+                                    </div>
+                                    <div class="payment-product-site-footer-price-num">
+                                        <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
+                                        <div class="product-cart-list-price-sum-num"><?php echo  number_format($totalPrice, 0, '', '.'); ?></div>
+                                    </div>
                                 </div>
-                                <div class="payment-product-site-footer-price-num">
-                                    <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num"><?php echo  number_format($totalPrice, 0, '', '.'); ?></div>
-                                </div>
-                            </div>
-                            <a href="index.php?page=main&controller=product&action=pay">
-                                <div class="btn payment-btn">Đặt hàng</div>
-                            </a>
-                        </div>
+                                <a href="index.php?page=main&controller=product&action=pay">
+                                    <button type="submit" class="btn payment-btn">Đặt hàng</button>
+                        </form>
+
+                        </a>
                     </div>
-                    <div class="col l-12">
-                        <div class="payment-product">
+                </div>
+                <div class="col l-12">
+                    <div class="payment-product">
 
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-
     </div>
+    <!-- Footer -->
 
-    <?php require_once __DIR__ . '/../footer.php';
+</div>
+
+<?php require_once __DIR__ . '/../footer.php';
