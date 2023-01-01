@@ -12,7 +12,7 @@ class ProductController  extends BaseController
 
     public function index()
     {
-
+        session_start();
         $conn = mysqli_connect('localhost', 'root', '123');
 
         if (!$conn) {
@@ -20,9 +20,22 @@ class ProductController  extends BaseController
         } else {
             mysqli_select_db($conn, 'E_commerce');
         }
-        $getQuery = "SELECT * FROM product limit 20";
+
+        if (!isset($_SESSION['num_rows'])) {
+            $getQuery = "SELECT * FROM product";
+            $req = mysqli_query($conn, $getQuery);
+            $_SESSION['num_rows'] = $req->num_rows;
+            $currPage  = 1;
+        }
+        if (!isset($_GET['currPage'])) $currPage = 1;
+        else $currPage = (int) ($_GET['currPage']);
+
+        $offset = $currPage > 1 ? (($currPage - 1) * 20 - 1) : 0;
+
+
+        $getQuery = "SELECT * FROM product limit 20 offset $offset";
         $result = mysqli_query($conn, $getQuery);
-        $data = array('result' => $result);
+        $data = array('result' => $result, 'currPage' => $currPage);
         $this->render('index', $data);
     }
 

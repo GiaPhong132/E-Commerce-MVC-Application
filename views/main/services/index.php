@@ -82,17 +82,45 @@ require_once(__DIR__ . "/../navbar.php");
                                             </div>
                                             <div class="home-filter-page">
                                                 <div class="home-filter-page-number">
-                                                    <p class="home-filter-page-now">1</p>
-                                                    /8
+                                                    <p class="home-filter-page-now">' . $currPage . '</p>
+                                                    /' . ceil($_SESSION['num_rows'] / 20) . '
                                                 </div>
                                                 <div class="home-filter-page-control">
-                                                    <a href="#" class="home-filter-page-btn home-filter-page-btn--disable">
-                                                        <i class="fas fa-angle-left"></i>
-                                                    </a>
-                                                    <a href="#" class="home-filter-page-btn">
-                                                        <i class="fas fa-angle-right"></i>
-                                                    </a>
-                                                </div>
+                                                    ';
+                        // if ($currPage == 1) {
+                        //     echo '
+                        //                                    <a href="index.php?page=main&controller=product&action=index&currPage=' . $currPage . '" class="home-filter-page-btn home-filter-page-btn--disable">
+                        //                                 <i class="fas fa-angle-left"></i>
+                        //                             </a>
+
+                        //                             <a href="index.php?page=main&controller=product&action=index&currPage=' . $currPage . '" class="home-filter-page-btn">
+                        //                                 <i class="fas fa-angle-right"></i>
+                        //                             </a>
+                        //                                 ';
+                        // } elseif ($currPage == $_SESSION['num_rows']) {
+                        //     echo '
+                        //                             <a href="index.php?page=main&controller=product&action=index&currPage=' . $currPage . '" class="home-filter-page-btn ">
+                        //                                                         <i class="fas fa-angle-left"></i>
+                        //                             </a>
+
+                        //                             <a href="index.php?page=main&controller=product&action=index&currPage=' . $currPage . '" class="home-filter-page-btn home-filter-page-btn--disable">
+                        //                                 <i class="fas fa-angle-right"></i>
+                        //                             </a>
+                        //     ';
+                        // } else {
+                        //     echo '
+                        //                       <a href="index.php?page=main&controller=product&action=index&currPage=' . $currPage . '" class="home-filter-page-btn">
+                        //                                 <i class="fas fa-angle-left"></i>
+                        //                             </a>
+
+                        //                             <a href="index.php?page=main&controller=product&action=index&currPage=' . $currPage . '" class="home-filter-page-btn">
+                        //                                 <i class="fas fa-angle-right"></i>
+                        //                             </a>
+                        //     ';
+                        // }
+
+                        echo '
+                                                    </div>
                                             </div>
                                         </div>
 
@@ -152,35 +180,10 @@ require_once(__DIR__ . "/../navbar.php");
 
 
             <!--  -->
+            <!-- pagination -->
+
+            <?php require_once __DIR__ . '/paginate.php'; ?>
         </div>
-        <!-- pagination -->
-        <!-- <ul class="pagination home-product-pagination">
-            <li class="pagination-item">
-                <a href="#" class="pagination-item-link pagination-item-link--disable">
-                    <i class="fas fa-chevron-left"></i>
-                </a>
-            </li>
-            <li class="pagination-item pagination-item--active">
-                <a href="#" class="pagination-item-link">1</a>
-            </li>
-            <li class="pagination-item">
-                <a href="#" class="pagination-item-link">2</a>
-            </li>
-            <li class="pagination-item">
-                <a href="#" class="pagination-item-link">3</a>
-            </li>
-            <li class="pagination-item">
-                <a class="pagination-item-link pagination-item-link--disable">. . .</a>
-            </li>
-            <li class="pagination-item">
-                <a href="#" class="pagination-item-link">8</a>
-            </li>
-            <li class="pagination-item">
-                <a href="#" class="pagination-item-link">
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            </li>
-        </ul> -->
     </div>
     </div>
     </div>

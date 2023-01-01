@@ -1,3 +1,3 @@
 use e_commerce;
 
-delete cart
+select * from product limit 20 offset 19
