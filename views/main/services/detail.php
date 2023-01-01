@@ -4,14 +4,18 @@ require_once __DIR__ . '/../navbar.php';
 
 <div class="app">
     <!-- header -->
-
     <!--Container-->
     <?php
-    echo
-    '
+    if (isset($message)) {
 
-        ';
-
+        echo '
+                        <div class="alert alert-success" id="myMsg" style="text-align:center">
+                        <strong>
+                            <h3>' . $message . '</h3>
+                        </strong>
+                    </div>
+                        ';
+    }
     ?>
     <div class="container-product-site">
         <div class="grid wide">
@@ -227,5 +231,12 @@ require_once __DIR__ . '/../navbar.php';
         </div>
     </div>
     <!-- Footer -->
+
+    <script type="text/javascript">
+        function timedMsg() {
+            var t = setTimeout("document.getElementById('myMsg').style.display='none';", 4000);
+        }
+        timedMsg();
+    </script>
 
     <?php require_once __DIR__ . '/../footer.php';
