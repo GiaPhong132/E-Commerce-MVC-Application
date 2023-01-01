@@ -36,7 +36,9 @@ class ProductController  extends BaseController
 
         $getQuery = "SELECT * FROM product limit 20 offset $offset";
         $result = mysqli_query($conn, $getQuery);
-        $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
+        if (isset($_GET['msg']))
+            $message = "Đặt hàng thành công";
+        $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal, 'message' => @$message);
         $this->render('index', $data);
     }
 
@@ -150,6 +152,30 @@ class ProductController  extends BaseController
         $this->render('payment', $data);
     }
 
+    public function buyNow()
+    {
+        $conn = mysqli_connect('localhost', 'root', '123');
+
+        if (!$conn) {
+            die("Connection failed" . mysqli_connect_error());
+        } else {
+            mysqli_select_db($conn, 'E_commerce');
+        }
+
+        if (session_status() != PHP_SESSION_ACTIVE)
+            session_start();
+        $email = $_SESSION['guest'];
+        $product_id = $_GET['productKey'];
+        $query = "select * from product where id=$product_id ;";
+        $result = mysqli_query($conn, $query);
+        $req = $result->fetch_assoc();
+        $totalPrice =  $req['newPrice'];
+
+        $signal = "buyNow";
+        $data = array('productCheck' => $result, 'totalPrice' => $totalPrice, 'signal' => $signal);
+        $this->render('payment', $data);
+    }
+
     public function pay()
     {
         $conn = mysqli_connect('localhost', 'root', '123');
@@ -163,20 +189,28 @@ class ProductController  extends BaseController
         if (session_status() != PHP_SESSION_ACTIVE)
             session_start();
         $email = $_SESSION['guest'];
+        if (!isset($_SESSION['buyNow']))
+            foreach (explode('&', file_get_contents('php://input')) as $keyValuePair) {
+                list($key, $value) = explode('=', $keyValuePair);
+                $query = "select amount from cart join product p on p.id = cart.product_id and email ='$email' and id=$value";
+                $req = mysqli_query($conn, $query);
+                $result = $req->fetch_assoc();
+                $amount = $result['amount'];
+                $currentDate  = date('Y-m-d h:i:s');
+                $query = "insert into corder (email, product_id, amount, state, time) values ('$email', $value, $amount, 'Đang vận chuyển', '$currentDate');";
+                mysqli_query($conn, $query);
 
-        foreach (explode('&', file_get_contents('php://input')) as $keyValuePair) {
-            list($key, $value) = explode('=', $keyValuePair);
-            $query = "select amount from cart join product p on p.id = cart.product_id and email ='$email' and id=$value";
-            $req = mysqli_query($conn, $query);
-            $result = $req->fetch_assoc();
-            $amount = $result['amount'];
+                $query = "delete from cart where email='$email' and product_id=$value;";
+                mysqli_query($conn, $query);
+            }
+        else {
             $currentDate  = date('Y-m-d h:i:s');
-            $query = "insert into corder (email, product_id, amount, state, time) values ('$email', $value, $amount, 'Đang vận chuyển', '$currentDate');";
-            mysqli_query($conn, $query);
-
-            $query = "delete from cart where email='$email' and product_id=$value;";
+            $pid = $_SESSION['idBuyNow'];
+            $query = "insert into corder (email, product_id, amount, state, time) values ('$email', $pid, 1, 'Đang vận chuyển', '$currentDate');";
             mysqli_query($conn, $query);
         }
+
+        header('Location: index.php?page=main&controller=product&action=index&msg=successful');
     }
 
     public function getFilter()

@@ -100,8 +100,9 @@ require_once __DIR__ . '/../navbar.php';
 
                         <form action="index.php?page=main&controller=product&action=pay" method="POST">
                             <?php
-                            foreach ($productCheck as $row) {
-                                echo '
+                            if (@$signal != "buyNow") {
+                                foreach ($productCheck as $row) {
+                                    echo '
                                             <div class="payment-product-site-container">
                                                 <div class="payment-product-site-container__name1">
                                                     <img src="/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif" alt="" class="payment-product-site-container__img">
@@ -126,6 +127,37 @@ require_once __DIR__ . '/../navbar.php';
                                                 </div>
                                             </div>
                             ';
+                                }
+                            } else {
+                                $_SESSION['buyNow'] = "1";
+                                foreach ($productCheck as $row) {
+                                    $_SESSION['idBuyNow'] = $row['id'];
+                                    echo '
+                                <div class="payment-product-site-container">
+                                                <div class="payment-product-site-container__name1">
+                                                    <img src="/e_commerce/public/assets/img/products/' . $row['id'] . '.jfif" alt="" class="payment-product-site-container__img">
+                                                    <div class="payment-product-site-container__name3">
+                                                     <input type="hidden" name="key" value="' . $row['id'] . '" >
+                                                        <div class="payment-product-site-container__name">' . $row['name'] . '</div>
+                                                        <div class="payment-product-site-container__name-2">Loại: Midnight</div>
+                                                    </div>
+                                                </div>
+                                                <div class="payment-product-site-container__name2">
+                                                    <div class="payment-product-site-container__price">
+                                                        <div class="product-cart-list-price">đ</div>
+                                                        ' .  number_format($row['newPrice'], 0, '', '.') . '
+                                                    </div>
+                                                    <div class="payment-product-site-container__quantity">
+                                                        1
+                                                    </div>
+                                                    <div class="payment-product-site-container__sum">
+                                                        <div class="product-cart-list-price">đ</div>
+                                                        ' . number_format($row['newPrice'] * 1, 0, '', '.') . '
+                                                    </div>
+                                                </div>
+                                            </div>
+                                ';
+                                }
                             }
                             ?>
 

@@ -1,5 +1,15 @@
 <?php
 require_once(__DIR__ . "/../navbar.php");
+if (isset($message)) {
+
+    echo '
+                        <div class="alert alert-success" id="myMsg" style="text-align:center">
+                        <strong>
+                            <h3>' . $message . '</h3>
+                        </strong>
+                    </div>
+                        ';
+}
 ?>
 
 <!DOCTYPE html>
@@ -268,5 +278,12 @@ require_once(__DIR__ . "/../navbar.php");
     </div>
     </div>
     </div>
+
+    <script type="text/javascript">
+        function timedMsg() {
+            var t = setTimeout("document.getElementById('myMsg').style.display='none';", 4000);
+        }
+        timedMsg();
+    </script>
 
     <?php require_once __DIR__ . '/../footer.php';
