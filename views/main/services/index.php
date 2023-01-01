@@ -101,8 +101,8 @@ require_once(__DIR__ . "/../navbar.php");
                                         <div class="home-product-item__info">
                                             <h4 class="home-product-item__name">' . $row['name'] . '</h4>
                                             <div class="home-product-item__price">
-                                                <p class="home-product-item__price-old">' . $row['oldPrice'] / 1000 . '.000đ</p>
-                                                <p class="home-product-item__price-new">' . $row['newPrice'] / 1000 . '.000đ</p>
+                                                <p class="home-product-item__price-old">' .  number_format($row['oldPrice'], 0, '', '.') . 'đ</p>
+                                                <p class="home-product-item__price-new">' .  number_format($row['newPrice'], 0, '', '.') . 'đ</p>
                                                 <i class="home-product-item__ship fas fa-shipping-fast"></i>
                                             </div>
                                             <div class="home-product-item__footer">
@@ -134,7 +134,8 @@ require_once(__DIR__ . "/../navbar.php");
 
                                 ';
                     } else {
-                        echo '<div class="shopee-search-empty-result-section"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/a60759ad1dabe909c46a817ecbf71878.png" class="shopee-search-empty-result-section__icon"><div class="shopee-search-empty-result-section__title">Không tìm thấy kết quả nào</div><div class="shopee-search-empty-result-section__hint">Hãy thử sử dụng các từ khóa chung chung hơn</div></div>';                    }
+                        echo '<div class="shopee-search-empty-result-section"><img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/a60759ad1dabe909c46a817ecbf71878.png" class="shopee-search-empty-result-section__icon"><div class="shopee-search-empty-result-section__title">Không tìm thấy kết quả nào</div><div class="shopee-search-empty-result-section__hint">Hãy thử sử dụng các từ khóa chung chung hơn</div></div>';
+                    }
 
                     ?>
                 </div>

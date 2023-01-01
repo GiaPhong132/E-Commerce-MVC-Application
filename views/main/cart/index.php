@@ -60,12 +60,12 @@ require_once __DIR__ . '/../navbar.php';
                                                 </div>
                                                 <div class="product-cart-list-name">
                                                     <div class="product-cart-list-price">đ</div>
-                                                    ' . $row['newPrice'] / 1000 . '.000
+                                                    ' . number_format($row['newPrice'], 0, '', '.') . '
                                                 </div>
                                                 <div class="product-cart-list-name product-cart-list-name-quantity">' . $row['amount'] . '</div>
                                                 <div class="product-cart-list-name">
                                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                                    <div class="product-cart-list-price-sum-num">' . $row['newPrice'] * $row['amount']  / 1000 . '.000</div>
+                                                    <div class="product-cart-list-price-sum-num">' . number_format($row['newPrice'] * $row['amount'], 0, '', '.') . '</div>
                                                 </div>
                                                 <div class="product-cart-list-name">
                                                     <div class="product-cart-list-act"><a href="index.php?page=main&controller=cart&action=delete&idDel=' . $row['id'] . '">Xóa</a></div>

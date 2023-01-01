@@ -1,6 +1,6 @@
 <?php
-if (!isset($_SESSION['guest']))
-    header('Location: index.php?page=main&controller=product&action=index');
+// if (!isset($_SESSION['guest']))
+//     header('Location: index.php?page=main&controller=login&action=index');
 require_once("/xampp/htdocs/E_commerce/views/main/navbar.php");
 
 ?>

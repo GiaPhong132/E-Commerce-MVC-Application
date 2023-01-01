@@ -49,7 +49,7 @@ require_once __DIR__ . '/../navbar.php';
                             </div>
                             <div class="product-site-buy-price">
                                 <div class="product-site-buy-price--1">đ</div>
-                                <div class="product-site-buy-price--2"><?php echo $product->newPrice / 1000 ?><span>.000</span></div>
+                                <div class="product-site-buy-price--2"><?php echo number_format($product->newPrice, 0, '', '.'); ?><span>.000</span></div>
                             </div>
                             <div class="product-site-transport">
                                 <div class="product-site-transport-name">Vận chuyển</div>
@@ -134,7 +134,7 @@ require_once __DIR__ . '/../navbar.php';
                                 </div>
                                 <div class="product-site-shop-infor-1-2">
                                     <div class="product-site-shop-infor-label">Người theo dõi</div>
-                                    <div class="product-site-shop-infor-num"><?php echo $shop->followers / 1000 ?> k</div>
+                                    <div class="product-site-shop-infor-num"><?php echo  number_format($shop->followers, 0, '', '.'); ?> k</div>
                                 </div>
                             </div>
                         </div>

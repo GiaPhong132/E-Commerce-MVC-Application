@@ -116,14 +116,14 @@ require_once __DIR__ . '/../navbar.php';
                                             <div class="payment-product-site-container__name2">
                                                 <div class="payment-product-site-container__price">
                                                     <div class="product-cart-list-price">đ</div>
-                                                    ' . $row['newPrice'] / 1000 . '.000
+                                                    ' .  number_format($row['newPrice'], 0, '', '.') . '
                                                 </div>
                                                 <div class="payment-product-site-container__quantity">
                                                     ' . $row['amount'] . '
                                                 </div>
                                                 <div class="payment-product-site-container__sum">
                                                     <div class="product-cart-list-price">đ</div>
-                                                    ' .  $row['newPrice'] / 1000 * $row['amount'] . '.000
+                                                    ' . number_format($row['newPrice'] * $row['amount'], 0, '', '.') . '
                                                 </div>
                                             </div>
                                         </div>
@@ -145,7 +145,7 @@ require_once __DIR__ . '/../navbar.php';
                             <div class="payment-product-site-footer-price">
                                 <div class="payment-product-site-footer-price-num">
                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num"><?php echo $total ?></div>
+                                    <div class="product-cart-list-price-sum-num"><?php echo number_format($total, 0, '', '.'); ?></div>
                                 </div>
                                 <div class="payment-product-site-footer-price-num">
                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
@@ -153,7 +153,7 @@ require_once __DIR__ . '/../navbar.php';
                                 </div>
                                 <div class="payment-product-site-footer-price-num">
                                     <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                    <div class="product-cart-list-price-sum-num"><?php echo $total ?></div>
+                                    <div class="product-cart-list-price-sum-num"><?php echo  number_format($total, 0, '', '.'); ?></div>
                                 </div>
                             </div>
                             <div class="btn payment-btn">Đặt hàng</div>
