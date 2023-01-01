@@ -28,9 +28,7 @@ require_once __DIR__ . '/../navbar.php';
                         <div class="product-cart-container-box">
                             <div class="product-cart-container-turtorial">
                                 <div class="product-cart-turtorial-list">
-                                    <div class="product-cart-container-turtorial-checkbox">
-                                        <i class="fa-solid fa-check product-cart-icon-btn"></i>
-                                    </div>
+
 
                                     <div class="product-cart-list-name product-cart-list-name-p">Sản phẩm</div>
                                     <div class="product-cart-list-name">Đơn giá</div>
@@ -84,10 +82,8 @@ require_once __DIR__ . '/../navbar.php';
                                 <div class="product-cart-container-box-footer">
                                     <div class="product-cart-container-turtorial">
                                         <div class="product-cart-turtorial-list-footer">
-                                            <div class="product-cart-container-turtorial-checkbox">
-                                                <i class="fa-solid fa-check product-cart-icon-btn"></i>
-                                            </div>
-                                            <div class="product-cart-footer-name">Chọn Tất Cả (' . $totalAmount . ')</div>
+
+                                            <div class="product-cart-footer-name"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
                                             <div class="product-cart-footer-name-price-sum">Tổng Thanh Toán (' . $totalAmount . ' sản phẩm)</div>
                                             <div class="product-cart-footer-price">
                                                 <div class="product-cart-list-price product-cart-list-price-sum">đ</div>

@@ -62,6 +62,16 @@
                         </div>
                         <div class="container-profile-body">
                             <div class="col l-8">
+                                <?php
+                                if (isset($message)) {
+
+                                    echo '
+                        <div class="alert alert-success">
+                        <strong>' . $message . '</strong>
+                    </div>
+                        ';
+                                }
+                                ?>
                                 <div class="container-profile-body-content container-profile-body-content--separate">
                                     <div class="container-profile-body-content-name">
                                         <div class="container-profile-body-content-name-label">Tên đăng nhập</div>
@@ -166,8 +176,8 @@
                                         <br>
                                         <input type="file" name="fileToUpload" id="fileToUpload" value="<?php $data->profile_photo; ?>">
                                         <div class="container-profile-body-avt-name-reg">
-                                            <div class="container-profile-body-avt-name">Dung lượng file tối đa 1 MB</div>
-                                            <div class="container-profile-body-avt-name">Định dạng: .JPEG, >PNG</div>
+                                            <!-- <div class="container-profile-body-avt-name">Dung lượng file tối đa 1 MB</div>
+                                            <div class="container-profile-body-avt-name">Định dạng: .JPEG, >PNG</div> -->
                                         </div>
                                     </div>
                                 </div>

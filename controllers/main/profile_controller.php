@@ -48,10 +48,10 @@ class ProfileController extends BaseController
             $fileType != "jpg" && $fileType != "png" && $fileType != "jpeg"
             && $fileType != "gif"
         ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            // echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         }
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
-            echo "Sorry, your file is too large.";
+            // echo "Sorry, your file is too large.";
         }
 
         $user = User::get($email);
@@ -62,12 +62,17 @@ class ProfileController extends BaseController
         if (file_exists($target_file)) {
             User::update($email, $target_file, $fname, $lname, $gender, $phone, $birthday);
             unlink($file_pointer);
-            header('Location: index.php?page=main&controller=profile&action=index');
+            $message = "Update Successfully!";
+            $data = array('message' => $message);
+            $this->render('index', $data);
+            // header('Location: index.php?page=main&controller=profile&action=index');
         }
         // Update
         else {
             User::update($email, $data->profile_photo, $fname, $lname, $gender, $phone, $birthday);
-            header('Location: index.php?page=main&controller=profile&action=index');
+            $message = "Update Successfully!";
+            $data = array('message' => $message);
+            $this->render('index', $data);
         }
     }
 
