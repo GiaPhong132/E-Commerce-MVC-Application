@@ -176,6 +176,7 @@ class ProductController  extends BaseController
 
     public function getFilter()
     {
+        $currPage = 1;
         $conn = mysqli_connect('localhost', 'root', '123');
 
         if (!$conn) {
@@ -187,31 +188,31 @@ class ProductController  extends BaseController
             $getQuery = "SELECT * FROM product order by dateAdd limit 20";
             $result = mysqli_query($conn, $getQuery);
             $signal = "getLatest";
-            $data = array('result' => $result, 'signal' => $signal);
+            $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
             $this->render('index', $data);
         } elseif (isset($_POST['getPopular'])) {
             $getQuery = "SELECT * FROM product order by reviews limit 20";
             $result = mysqli_query($conn, $getQuery);
             $signal = "getPopular";
-            $data = array('result' => $result, 'signal' => $signal);
+            $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
             $this->render('index', $data);
         } elseif (isset($_POST['getMost'])) {
             $getQuery = "SELECT * FROM product order by sold, reviews limit 20";
             $result = mysqli_query($conn, $getQuery);
             $signal = "getMost";
-            $data = array('result' => $result, 'signal' => $signal);
+            $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
             $this->render('index', $data);
         } elseif (isset($_POST['descending'])) {
             $getQuery = "SELECT * FROM product order by newPrice desc limit 20";
             $result = mysqli_query($conn, $getQuery);
             $signal = "descending";
-            $data = array('result' => $result, 'signal' => $signal);
+            $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
             $this->render('index', $data);
         } elseif (isset($_POST['ascending'])) {
             $getQuery = "SELECT * FROM product order by newPrice asc limit 20";
             $result = mysqli_query($conn, $getQuery);
             $signal = "ascending";
-            $data = array('result' => $result, 'signal' => $signal);
+            $data = array('result' => $result, 'currPage' => $currPage, 'signal' => $signal);
             $this->render('index', $data);
         }
     }
