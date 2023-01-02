@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2>Improve Your IDE Improve Your Life</h2>
-                <p>More than 200 million users have used the software personally developed by BKSHOPE</p>
+                <p>More than 200 million users have used the software personally developed by BKSHEPO</p>
                 <ul class="list-inline">
                     <li class="list-inline-item">
                         <a href="" class="btn btn-rounded-icon">
