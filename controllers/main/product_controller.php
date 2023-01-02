@@ -212,6 +212,7 @@ class ProductController  extends BaseController
                 mysqli_query($conn, $query);
             }
         else {
+            $_SESSION['buyNow'] = NULL;
             $currentDate  = date('Y-m-d h:i:s');
             $pid = $_SESSION['idBuyNow'];
             $query = "insert into corder (email, product_id, amount, state, time) values ('$email', $pid, 1, 'Đang vận chuyển', '$currentDate');";
