@@ -51,10 +51,16 @@ class ProductController  extends BaseController
         } else {
             mysqli_select_db($conn, 'E_commerce');
         }
+
+        if (!isset($_GET['currPage'])) $currPage = 1;
+        else $currPage = (int) ($_GET['currPage']);
+
+        $offset = $currPage > 1 ? (($currPage - 1) * 20 - 1) : 0;
+
         $key = $_POST['searchKey'];
-        $getQuery = "SELECT * FROM product where locate('$key', name) > 0";
+        $getQuery = "SELECT * FROM product where locate('$key', name) > 0  limit 20 offset $offset";
         $result = mysqli_query($conn, $getQuery);
-        $data = array('result' => $result);
+        $data = array('result' => $result, 'currPage' => $currPage);
         $this->render('index', $data);
     }
 

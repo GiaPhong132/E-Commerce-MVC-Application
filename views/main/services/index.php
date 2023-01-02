@@ -63,19 +63,19 @@ if (isset($message)) {
                                                 <p class="home-filter-title">Sắp xếp theo</p>
                                                 <form action="index.php?page=main&controller=product&action=getFilter" method="POST">
                                                     ';
-                        if ($signal == 'getPopular') {
+                        if (@$signal == 'getPopular') {
                             echo '
                                                     <button type="submit" name="getPopular" class="btn btn--primary home-filter-btn">Phổ biến</button>
                                                     <button type="submit" name="getLatest" class="btn home-filter-btn">Mới nhất</button>
                                                     <button type="submit" name="getMost" class="btn home-filter-btn">Bán chạy</button>
                                                     ';
-                        } elseif ($signal == 'getLatest') {
+                        } elseif (@$signal == 'getLatest') {
                             echo '
                                                     <button type="submit" name="getPopular" class="btn home-filter-btn">Phổ biến</button>
                                                     <button type="submit" name="getLatest" class="btn btn--primary home-filter-btn">Mới nhất</button>
                                                     <button type="submit" name="getMost" class="btn home-filter-btn">Bán chạy</button>
                                                     ';
-                        } elseif ($signal == 'getMost') {
+                        } elseif (@$signal == 'getMost') {
                             echo '
                                                     <button type="submit" name="getPopular" class="btn home-filter-btn">Phổ biến</button>
                                                     <button type="submit" name="getLatest" class="btn home-filter-btn">Mới nhất</button>
@@ -90,7 +90,7 @@ if (isset($message)) {
                         }
 
 
-                        if ($signal == 'descending' || $signal == "ascending") {
+                        if (@$signal == 'descending' || @$signal == "ascending") {
                             echo '
                                                 </form>
                                                 <div class="btn home-filter-sort" style="background-color:#fe6333">
@@ -113,7 +113,7 @@ if (isset($message)) {
                                                             <form action="index.php?page=main&controller=product&action=getFilter" method="POST">
                                     ';
                         }
-                        if ($signal == "ascending") {
+                        if (@$signal == "ascending") {
                             echo '
                                         <li >
                                                                 <a href="#" class="home-filter-sort-item-link">
@@ -129,7 +129,7 @@ if (isset($message)) {
                                                                 </a>
                                                             </li>
                                         ';
-                        } elseif ($signal == "descending") {
+                        } elseif (@$signal == "descending") {
                             echo '
                             <li style="background-color:#fe6333">
                                                                 <a href="#" class="home-filter-sort-item-link">
