@@ -33,7 +33,7 @@
                     </ul>
                 </div>
                 <div class="col l-2-4 m-4 ">
-                    <h3 class="footer__heading">VỀ SHOPEE</h3>
+                    <h3 class="footer__heading">VỀ SHEPO</h3>
                     <ul class="footer-list">
                         <li>
                             <a href="#" class="footer-item-link">Giới Thiệu Về Shepo</a>
@@ -157,6 +157,14 @@
         </div> -->
 </div>
 </div> -->
+
+<script type="text/javascript">
+    function timedMsg() {
+        var t = setTimeout("document.getElementById('myMsg').style.display='none';", 4000);
+    }
+    timedMsg();
+</script>
+
 
 <!-- script js -->
 <!-- <script src="./assets/js/product.js"></script> -->

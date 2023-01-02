@@ -20,6 +20,18 @@ require_once __DIR__ . '/../navbar.php';
         </div>
     </header> -->
     <!--Container-->
+    <?php
+    if (isset($message)) {
+
+        echo '
+                        <div class="alert alert-danger" id="myMsg" style="text-align:center">
+                        <strong>
+                            <h3>' . $message . '</h3>
+                        </strong>
+                    </div>
+                        ';
+    }
+    ?>
     <div class="container-cart">
         <div class="grid wide">
             <div class="row sm-gutter">
@@ -89,7 +101,7 @@ require_once __DIR__ . '/../navbar.php';
                                                 <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
                                                 <div class="product-cart-footer-price-sum">' . number_format($totalPrice, 0, '', '.')  . '</div>
                                             </div>
-                                            <button class="btn buy-btn" type="submit">Mua hàng</button>
+                                            <button class="btn buy-btn" type="submit" style="background-color: #DAD70E">Mua hàng</button>
                                         </div>
 
                                     </div>

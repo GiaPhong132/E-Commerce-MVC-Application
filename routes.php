@@ -11,6 +11,7 @@ $controllers = array(
 
     'members' => ['index', 'addUser', 'edit', 'getAll'],
     'product' => ['index', 'add', 'edit', 'delete', 'getAll', 'search', 'getDetail', 'addToCart', 'getPay', 'pay', 'getFilter', 'buyNow'],
+    'products' => ['index', 'add', 'edit', 'delete', 'getAll', 'search', 'getDetail', 'addToCart', 'getPay', 'pay', 'getFilter', 'buyNow'],
     'news' => ['index', 'add', 'edit', 'delete', 'hide'],
     'comments' => ['index', 'hide', 'add', 'edit', 'delete'],
     'admin' => ['index', 'add', 'edit', 'delete'],

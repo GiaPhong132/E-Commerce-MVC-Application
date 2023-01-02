@@ -54,11 +54,11 @@ require_once('/xampp/htdocs/E_commerce/views/admin/content_layouts.php'); ?>
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-6"><label>Tên sản phẩm</label><input class="form-control" type="text" placeholder="Tên sản phẩm" name="name" /></div>
-                                                    <div class="col-6"><label>Giá</label><input class="form-control" type="number" placeholder="Giá" name="price" /></div>
+                                                    <div class="col-6"><label>Giá hiện tại</label><input class="form-control" type="number" placeholder="Giá" name="price" /></div>
                                                 </div>
 
-                                                <div class="form-group"> <label>Mô tả</label> <textarea class="form-control" name="description" rows="5"></textarea></div>
-                                                <div class="form-group"> <label>Nội dung</label> <textarea class="form-control" name="content" rows="10"></textarea></div>
+                                                <div class="form-group"> <label>Giá cũ</label> <textarea class="form-control" name="description" rows="5"></textarea></div>
+                                                <div class="form-group"> <label>Lượt đánh giá</label> <textarea class="form-control" name="content" rows="10"></textarea></div>
                                                 <div class="form-group"> <label>Hình ảnh </label>&nbsp <input type="file" name="fileToUpload" id="fileToUpload" /></div>
                                             </div>
                                             <div class="modal-footer">
@@ -75,9 +75,9 @@ require_once('/xampp/htdocs/E_commerce/views/admin/content_layouts.php'); ?>
                                     <tr class="text-center">
                                         <th scope="col">STT</th>
                                         <th scope="col">Tên sản phẩm</th>
-                                        <th scope="col">Giá </th>
-                                        <th scope="col">Mô tả</th>
-                                        <th scope="col">Nội dung</th>
+                                        <th scope="col">Giá Hiện tại</th>
+                                        <th scope="col">Giá cũ</th>
+                                        <th scope="col">Lượt đánh giá</th>
                                         <th scope="col">Hình ảnh</th>
                                         <th scope="col">Thao tác</th>
                                     </tr>
@@ -99,22 +99,22 @@ require_once('/xampp/htdocs/E_commerce/views/admin/content_layouts.php'); ?>
                                             " . $item['name'] . "
                                         </td>
                                         <td>
-                                            " .  $item['price'] . "
+                                            " .  $item['newPrice'] . "
                                         </td>
                                         <td>
-                                            " .  $item['description'] . "
+                                            " .  $item['oldPrice'] . "
                                         </td>
                                         <td>
-                                            " . $item['content'] . "
+                                            " . $item['reviews'] . "
                                         </td>
                                         <td >
-                                            <img style='width: 100px; height:100px;' src='" . $item['img'] . "'>
+                                            <img style='width: 100px; height:100px;' src='/e_commerce/public/assets/img/products/" . $item['id'] . ".jfif'>
                                         </td>
                                         ";
 
                                         echo "
                                        <td>
-                                       <button data-toggle='modal' data-target='#EditStudentModal" . $item['id'] . "' type='button' data class='btn-edit btn btn-primary btn-xs' style='margin-right: 5px' data-id='" . $item['id'] . "' data-name='" . $item['name'] . "' data-price='" . $item['price'] . "' data-description='" . $item['description'] . "' data-content='" . $item['content'] . "' data-img='" . $item['img'] . "'> <i style='font-size:17px;' class='fas fa-edit' ></i></button>";
+                                       <button data-toggle='modal' data-target='#EditStudentModal" . $item['id'] . "' type='button' data class='btn-edit btn btn-primary btn-xs' style='margin-right: 5px' data-id='" . $item['id'] . "' data-name='" . $item['name'] . "' data-price='" . $item['newPrice'] . "' data-description='" . $item['oldPrice'] . "' data-content='" . $item['reviews'] . "' data-img='/e_commerce/public/assets/img/products/" . $item['id'] . ".jfif'> <i style='font-size:17px;' class='fas fa-edit' ></i></button>";
                                         echo "
                                        <div class='modal fade' id='EditStudentModal" . $item['id'] . "' tabindex='-1' role='dialog' aria-labelledby='EditStudentModal" . $item['id'] . "' aria-hidden='true'>
                                            <div class='modal-dialog modal-xl' role='document'>
@@ -127,11 +127,11 @@ require_once('/xampp/htdocs/E_commerce/views/admin/content_layouts.php'); ?>
                                                            <div class='col-12'><label>ID</label> <input class='form-control' type='text' value='" . $item['id'] . "' name='id' readonly /></div>
                                                            <div class='row'>
                                                                <div class='col-6'><label>Tên sản phẩm</label><input class='form-control' type='text' value='" . $item['name'] . "' name='name' /></div>
-                                                               <div class='col-6'><label>Giá</label><input class='form-control' type='number' value='" . $item['price'] . "' name='price' /></div>
+                                                               <div class='col-6'><label>Giá hiện tại</label><input class='form-control' type='number' value='" . $item['newPrice'] . "' name='price' /></div>
                                                            </div>
 
-                                                           <div class='form-group'> <label>Mô tả</label> <textarea class='form-control' name='description' rows='5'>" . $item['description'] . "</textarea></div>
-                                                           <div class='form-group'> <label>Nội dung</label> <textarea class='form-control' name='content' rows='10'>" . $item['content'] . "</textarea></div>
+                                                           <div class='form-group'> <label>Giá cũ</label> <textarea class='form-control' name='description' rows='1'>" . $item['oldPrice'] . "</textarea></div>
+                                                           <div class='form-group'> <label>Lượt đánh giá</label> <textarea class='form-control' name='content' rows='1'>" . $item['reviews'] . "</textarea></div>
                                                            <div class='form-group'><label>Url Hình ảnh </label><input class='form-control' type='text' name='imggg' readonly /></div>
                                                            <div class='form-group'> <label> Hình ảnh </label>&nbsp <input type='file' name='fileToUpload' id='fileToUpload' /></div>
                                                        </div>

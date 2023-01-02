@@ -92,7 +92,7 @@ require_once __DIR__ . '/../navbar.php';
                                         <div class="product-site-option-addtocart-title">Thêm vào giỏ hàng</div>
                                     </a>
                                 </button>
-                                <a href="index.php?page=main&controller=product&action=buyNow&productKey=<?php echo $product->id ?> " class="btn-product-site btn--primary-product-site">Mua ngay</a>
+                                <a href="index.php?page=main&controller=product&action=buyNow&productKey=<?php echo $product->id ?> " class="btn-product-site btn--primary-product-site" style="background-color: #DAD70E;">Mua ngay</a>
                             </div>
                         </div>
                     </div>

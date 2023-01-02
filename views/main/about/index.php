@@ -10,7 +10,7 @@
                 <!-- Page Title -->
                 <h1>Về chúng tôi</h1>
                 <!-- Page Description -->
-                <p>BKSHOPE là Tập đoàn công nghệ hoạt động trong các lĩnh vực an ninh mạng, phần mềm, chính phủ điện tử, nhà sản xuất smartphone, thiết bị điện tử thông minh, Smart City và AI camera. BKSHOPE là 1 trong 10 thương hiệu Nổi tiếng nhất Việt Nam do Hội Sở hữu trí tuệ Việt Nam bình chọn, nằm trong Top 10 Dịch vụ hoàn hảo do Hội Tiêu chuẩn Bảo vệ Người tiêu dùng Việt Nam bình chọn.
+                <p>BKSHEPO là Tập đoàn công nghệ hoạt động trong các lĩnh vực an ninh mạng, phần mềm, chính phủ điện tử, nhà sản xuất smartphone, thiết bị điện tử thông minh, Smart City và AI camera. BKSHOPE là 1 trong 10 thương hiệu Nổi tiếng nhất Việt Nam do Hội Sở hữu trí tuệ Việt Nam bình chọn, nằm trong Top 10 Dịch vụ hoàn hảo do Hội Tiêu chuẩn Bảo vệ Người tiêu dùng Việt Nam bình chọn.
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
                     <!-- Headline -->
                     <h2>Tầm nhìn</h2>
                     <!-- Story -->
-                    <p> Với kim chỉ nam, phát triển khoa học công nghệ giúp đất nước giàu mạnh, nâng tầm tự chủ, uy tín và thương hiệu quốc gia, Tập đoàn BKSHOPE tự nhận về mình sứ mệnh xây dựng và bảo vệ đất nước bằng khoa học, công nghệ. Những việc nào hữu ích cho xã hội, sử dụng đến công nghệ thì nhất định BKSHOPE sẽ làm, bất kể đó là việc gì. Mục tiêu là phát triển đất nước dựa vào công nghệ, đưa Việt Nam trở thành con rồng thứ 5 của châu Á.
+                    <p> Với kim chỉ nam, phát triển khoa học công nghệ giúp đất nước giàu mạnh, nâng tầm tự chủ, uy tín và thương hiệu quốc gia, Tập đoàn BKSHEPO tự nhận về mình sứ mệnh xây dựng và bảo vệ đất nước bằng khoa học, công nghệ. Những việc nào hữu ích cho xã hội, sử dụng đến công nghệ thì nhất định BKSHEPO sẽ làm, bất kể đó là việc gì. Mục tiêu là phát triển đất nước dựa vào công nghệ, đưa Việt Nam trở thành con rồng thứ 5 của châu Á.
                     </p>
 
                 </div>

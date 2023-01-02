@@ -176,7 +176,7 @@ require_once __DIR__ . '/../navbar.php';
                                     </div>
                                     <div class="payment-product-site-footer-price-num">
                                         <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
-                                        <div class="product-cart-list-price-sum-num">20.000</div>
+                                        <div class="product-cart-list-price-sum-num">0</div>
                                     </div>
                                     <div class="payment-product-site-footer-price-num">
                                         <div class="product-cart-list-price product-cart-list-price-sum">đ</div>
@@ -184,7 +184,7 @@ require_once __DIR__ . '/../navbar.php';
                                     </div>
                                 </div>
                                 <a href="index.php?page=main&controller=product&action=pay">
-                                    <button type="submit" class="btn payment-btn">Đặt hàng</button>
+                                    <button type="submit" class="btn payment-btn" style="background-color: #DAD70E;">Đặt hàng</button>
                         </form>
 
                         </a>

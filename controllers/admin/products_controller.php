@@ -76,13 +76,12 @@ class ProductsController extends BaseController
         $code = (string)date("Y_m_d_h_i_sa");
         $fileuploadname = (string)$code;
         $name = $_POST['name'];
-        $price = $_POST['price'];
-        $content = $_POST['content'];
-        $description = $_POST['description'];
+        $price = $_POST['newPrice'];
+        $content = $_POST['oldPrice'];
+        $description = $_POST['reviews'];
         $page_number = $_GET['pg'];
 
-
-        $urlcurrent = Product::get((int)$id)->img;
+        $urlcurrent = '/e_commerce/public/assets/img/products/' . $id . '.jfif';
         if (!isset($_FILES["fileToUpload"]) || $_FILES['fileToUpload']['tmp_name'][0] == "") {
             Product::update($id, $name, $price, $description, $content, $urlcurrent);
             echo "Dữ liệu upload bị lỗi";

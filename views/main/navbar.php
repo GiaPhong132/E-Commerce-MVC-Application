@@ -74,7 +74,7 @@ if (isset($_SESSION['guest'])) {
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" style="background-image: none; background-color: #72B858">
         <div class="grid wide">
             <!-- navbar -->
 
@@ -89,6 +89,29 @@ if (isset($_SESSION['guest'])) {
                                 <ul class="header__nav-user-menu">
                                     <li class="header__nav-user-item">
                                         <a href="index.php?page=main&controller=profile&action=index">Tài khoản của tôi</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="#">Đơn mua</a>
+                                    </li>
+                                    <li class="header__nav-user-item">
+                                        <a href="index.php?page=main&controller=login&action=logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </li>
+                         </div>
+                     </nav>
+
+                ';
+            } elseif (isset($_SESSION['user'])) {
+                echo '
+                  <nav class="header__navbar hide-on-mobile-tablet" style="float:right">
+                         <div class="avatar" style="padding-top:10px;">
+                             <li class="header__nav-item header__nav-user">
+                             <img src="/e_commerce/public/images/user/admin.png" class="header__nav-user-avt">
+                                <a href="#" class="header__nav-item-link header__nav-item--bold">' . $_SESSION['user'] . '</a>
+                                <ul class="header__nav-user-menu">
+                                    <li class="header__nav-user-item">
+                                        <a href="index.php?page=admin&controller=paginate&action=index">Manage</a>
                                     </li>
                                     <li class="header__nav-user-item">
                                         <a href="#">Đơn mua</a>
@@ -138,7 +161,7 @@ if (isset($_SESSION['guest'])) {
                             <div class="header__search-history">
                             </div>
                         </div>
-                        <button type="submit" class="btn header__search-btn" style="height: 40px; background-color:#27AE60">
+                        <button type="submit" class="btn header__search-btn" style="height: 40px; background-color:#DAD70E">
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
                     </div>

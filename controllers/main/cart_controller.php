@@ -22,10 +22,12 @@ class CartController  extends BaseController
         }
         $email = $_SESSION['guest'];
 
+        if (isset($_GET['msg']))
+            $message = "Bạn phải chọn ít nhất 1 sản phẩm";
         $getQuery = "select * from cart join product p on cart.product_id = p.id and email = '$email'";
         $result = mysqli_query($conn, $getQuery);
 
-        $data = array('result' => $result);
+        $data = array('result' => $result, 'message' => @$message);
         $this->render('index', $data);
     }
 

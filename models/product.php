@@ -105,12 +105,12 @@ class Product
         return $req;
     }
 
-    static function update($id, $name, $price, $description, $content, $img)
+    static function update($id, $name, $newPrice, $oldPrice, $reviews)
     {
         $db = DB::getInstance();
         $req = $db->query(
             "  UPDATE product
-                SET name = '$name', price = $price, description = '$description', content = '$content', img = '$img'
+                SET name = '$name', price = $newPrice, description = '$oldPrice', content = '$reviews'
                 WHERE id = $id;"
         );
     }

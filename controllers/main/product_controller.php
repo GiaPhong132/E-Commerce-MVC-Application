@@ -129,6 +129,8 @@ class ProductController  extends BaseController
         } else {
             mysqli_select_db($conn, 'E_commerce');
         }
+        if (!isset($_POST['key']))
+            header('Location: index.php?page=main&controller=cart&action=index&msg=check');
 
         if (session_status() != PHP_SESSION_ACTIVE)
             session_start();
