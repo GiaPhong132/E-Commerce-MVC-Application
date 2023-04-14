@@ -1,4 +1,4 @@
-# E-commerce
+First of all, the name of this project has changed. For a perfect experience, you should change this project name to "e_commerce".
 
 This is our Programming Integration Project. The main concept in this project is MVC(Model-View-Controller) model.
 
